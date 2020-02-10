@@ -1,0 +1,25 @@
+{
+  "name": "mailinator-client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "coverage": "jest --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^13.1.8",
+    "fs": "0.0.1-security",
+    "typed-rest-client": "^1.7.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.25",
+    "jest": "^24.9.0",
+    "tmp": "^0.1.0",
+    "ts-jest": "^24.3.0",
+    "typescript": "^3.7.4"
+  }
+}
