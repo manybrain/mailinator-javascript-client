@@ -5,7 +5,7 @@ import {AUTHORIZATION} from '../Constants';
 import {Rule} from "./Rule";
 
 const _resolveTemplateUrl = (domainId: string, ruleId: string) => {
-    return `https://api.mailinator.com/v2/domains/${domainId}/rules/${ruleId}`;
+    return `https://api.mailinator.com/api/v2/domains/${domainId}/rules/${ruleId}`;
 };
 
 export class GetRuleRequest implements Request<Rule> {

@@ -6,7 +6,7 @@ import {RuleToCreate} from "./RuleToCreate";
 import {Rule} from "./Rule";
 
 const _resolveTemplateUrl = (domainId: string) => {
-    return `https://api.mailinator.com/v2/domains/${domainId}/rules/`;
+    return `https://api.mailinator.com/api/v2/domains/${domainId}/rules/`;
 };
 
 export class CreateRuleRequest implements Request<Rule> {

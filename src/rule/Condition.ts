@@ -1,9 +1,9 @@
 import {OperationType} from './OperationType';
+import {ConditionData} from "./ConditionData";
 
 export class Condition {
 
     operation: OperationType;
-    field: string;
-    value: string;
+    condition_data: ConditionData;
 
 }

@@ -5,7 +5,7 @@ import {AUTHORIZATION} from "../Constants";
 import {ResponseStatus} from "./ResponseStatus";
 
 const _resolveTemplateUrl = (domainId: string, ruleId: string) => {
-    return `https://api.mailinator.com/v2/domains/${domainId}/rules/${ruleId}?action=enable`;
+    return `https://api.mailinator.com/api/v2/domains/${domainId}/rules/${ruleId}/enable`;
 };
 
 export class EnableRuleRequest implements Request<ResponseStatus> {
@@ -22,6 +22,6 @@ export class EnableRuleRequest implements Request<ResponseStatus> {
             }
         };
 
-        return restClient.replace<ResponseStatus>(_resolveTemplateUrl(this.domainId, this.ruleId), _options);
+        return restClient.replace<ResponseStatus>(_resolveTemplateUrl(this.domainId, this.ruleId), {}, _options);
     }
 }

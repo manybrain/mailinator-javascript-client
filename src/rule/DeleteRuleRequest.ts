@@ -5,7 +5,7 @@ import {AUTHORIZATION} from "../Constants";
 import {ResponseStatus} from "./ResponseStatus";
 
 const _resolveTemplateUrl = (domainId: string, ruleId: string) => {
-    return `https://api.mailinator.com/v2/domains/${domainId}/rules/${ruleId}`;
+    return `https://api.mailinator.com/api/v2/domains/${domainId}/rules/${ruleId}`;
 };
 
 export class DeleteRuleRequest implements Request<ResponseStatus> {

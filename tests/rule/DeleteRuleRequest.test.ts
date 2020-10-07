@@ -1,11 +1,16 @@
 import {createNewRule, getFirstAvailableDomain} from '../TestUtils';
-import {getApiToken} from "../TestEnv";
+import {ENV_API_TOKEN, ENV_DOMAIN_PRIVATE, getApiToken} from "../TestEnv";
 import {DeleteRuleRequest} from "../../src/rule/DeleteRuleRequest";
+import {EnabledIfEnvironmentVariable, EnabledIfEnvironmentVariables, itIf} from "../ConditionalTest";
 
 describe('DeleteRuleRequest Tests', function () {
 
-    // TODO API bug creating rule
-    it.skip('testDeleteRuleRequest', async () => {
+    itIf(
+        new EnabledIfEnvironmentVariables(
+            new EnabledIfEnvironmentVariable(ENV_API_TOKEN, "[^\\s]+"),
+            new EnabledIfEnvironmentVariable(ENV_DOMAIN_PRIVATE, "[^\\s]+")
+        )
+    )('testDeleteRuleRequest', async () => {
 
         const domain = await getFirstAvailableDomain();
 

@@ -10,6 +10,7 @@ import {Condition} from "../src/rule/Condition";
 import {OperationType} from "../src/rule/OperationType";
 import {RuleToCreate} from "../src/rule/RuleToCreate";
 import {CreateRuleRequest} from "../src/rule/CreateRuleRequest";
+import {ConditionData} from "../src/rule/ConditionData";
 
 export const postMessage = (domain: string, inbox: string) => {
 
@@ -41,7 +42,9 @@ export const createNewRule = async () => {
 
     const condition = new Condition();
     condition.operation = OperationType.EQUALS;
-    condition.value = "raul";
+    condition.condition_data = new ConditionData()
+    condition.condition_data.field = "to";
+    condition.condition_data.value = "raul";
 
     const random: string = uuid();
 
