@@ -17,7 +17,6 @@ describe('PostMessageRequest Tests', function () {
         const result = response.result;
         expect(result).toBeTruthy();
         expect(result!.id).toBeTruthy();
-        expect(Array.isArray(result!.rules_fired)).toBe(true);
         expect(result!.status).toBe('ok');
     });
 

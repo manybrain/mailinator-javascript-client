@@ -51,3 +51,8 @@ Most of the tests require env variables with valid values. Visit tests source co
 * `MAILINATOR_TEST_MESSAGE_WITH_ATTACHMENT_ID` - existing message id within inbox (see above) within private domain (see above); see also https://manybrain.github.io/m8rdocs/#fetch-message
 * `MAILINATOR_TEST_ATTACHMENT_ID` - existing message id within inbox (see above) within private domain (see above); see also https://manybrain.github.io/m8rdocs/#fetch-message
 * `MAILINATOR_TEST_DELETE_DOMAIN` - don't use it unless you are 100% sure what you are doing
+
+#### Create index
+
+* Install https://www.npmjs.com/package/create-ts-index `npm install create-ts-index -g`
+* Run `cti create .`

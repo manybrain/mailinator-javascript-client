@@ -1,0 +1,37 @@
+// created from 'create-ts-index'
+
+{
+  addNewline: true,
+  excludes: [
+    '.idea',
+    '.git',
+    'lib',
+    'tests',
+    'node_modules',
+  ],
+  fileExcludePatterns: [],
+  fileFirst: false,
+  globOptions: {
+    dot: true,
+    ignore: [
+      '.idea',
+      '.git',
+      'lib',
+      'tests',
+      'node_modules',
+    ],
+    nonull: true,
+  },
+  includeCWD: true,
+  output: 'index.ts',
+  quote: "'",
+  targetExts: [
+    'ts',
+    'tsx',
+  ],
+  useSemicolon: true,
+  useTimestamp: false,
+  verbose: false,
+  withoutBackupFile: false,
+  withoutComment: false,
+}
