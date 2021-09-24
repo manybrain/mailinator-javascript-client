@@ -5,6 +5,7 @@
     "noImplicitAny": false,
     "strictNullChecks": true,
     "sourceMap": false,
+    "skipLibCheck": true,
     "outDir": "./lib",
     "typeRoots": [
       "node_modules/@types",
