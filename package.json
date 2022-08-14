@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "description": "Mailinator REST API client for JavaScript applications.",
   "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "types": "types/index.d.ts",
   "files": [
     "lib/**/*"
   ],
