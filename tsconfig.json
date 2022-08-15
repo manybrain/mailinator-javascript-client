@@ -8,7 +8,6 @@
     "skipLibCheck": true,
     "outDir": "./lib",
     "declaration": true,
-    "declarationDir": "types",
     "typeRoots": [
       "node_modules/@types",
       "node_modules/@types/node"
