@@ -1,3 +1,3 @@
 export class Links {
-    links: Array<String>;
+    links: Array<string>;
 }
