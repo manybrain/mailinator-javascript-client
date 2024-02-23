@@ -16,7 +16,7 @@ describe('DeleteRuleRequest Tests', function () {
 
         const rule = await createNewRule();
 
-        const request = new DeleteRuleRequest(domain._id, rule!.result!._id);
+        const request = new DeleteRuleRequest(domain.name, rule!.result!._id);
         const response = await request.execute(getApiToken());
         expect(response.statusCode).toBe(200);
     });

@@ -17,13 +17,13 @@ describe('GetRuleRequest Tests', function () {
 
         const rule = await createNewRule();
 
-        const request = new GetRuleRequest(domain._id, rule!.result!._id);
+        const request = new GetRuleRequest(domain.name, rule!.result!._id);
         const response = await request.execute(getApiToken());
         expect(response.statusCode).toBe(200);
         const result = response.result;
         expect(result).toBeTruthy();
 
-        await new DeleteRuleRequest(domain._id, rule!.result!._id).execute(getApiToken());
+        await new DeleteRuleRequest(domain.name, rule!.result!._id).execute(getApiToken());
     });
 
 });

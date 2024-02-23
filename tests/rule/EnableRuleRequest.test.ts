@@ -16,11 +16,11 @@ describe('EnableRuleRequest Tests', function () {
         const domain = await getFirstAvailableDomain();
         const rule = await createNewRule();
 
-        const request = new EnableRuleRequest(domain._id, rule!.result!._id);
+        const request = new EnableRuleRequest(domain.name, rule!.result!._id);
         const response = await request.execute(getApiToken());
         expect(response.statusCode).toBe(200);
 
-        await new DeleteRuleRequest(domain._id, rule!.result!._id).execute(getApiToken());
+        await new DeleteRuleRequest(domain.name, rule!.result!._id).execute(getApiToken());
     });
 
 });

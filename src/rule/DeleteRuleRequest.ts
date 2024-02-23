@@ -2,7 +2,7 @@ import {Request} from '../Request';
 import {IRequestOptions, IRestResponse} from 'typed-rest-client/RestClient';
 import restClient from '../MailinatorRestClient';
 import {AUTHORIZATION} from "../Constants";
-import {ResponseStatus} from "./ResponseStatus";
+import {ResponseStatus} from "../ResponseStatus";
 
 const _resolveTemplateUrl = (domainId: string, ruleId: string) => {
     return `https://api.mailinator.com/api/v2/domains/${domainId}/rules/${ruleId}`;

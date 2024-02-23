@@ -20,7 +20,7 @@ describe('CreateRuleRequest Tests', function () {
         expect(response.result?.enabled).toBeTruthy()
 
         const domain = await getFirstAvailableDomain();
-        await new DeleteRuleRequest(domain._id, response!.result!._id).execute(getApiToken());
+        await new DeleteRuleRequest(domain.name, response!.result!._id).execute(getApiToken());
     });
 
 });

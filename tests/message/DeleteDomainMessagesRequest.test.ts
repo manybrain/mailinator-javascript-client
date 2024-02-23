@@ -1,5 +1,5 @@
 import {DeleteDomainMessagesRequest} from '../../src/message/DeleteDomainMessagesRequest';
-import {ENV_API_TOKEN, ENV_DELETE_DOMAIN, ENV_DOMAIN_PRIVATE, getApiToken, getPrivateDomain} from "../TestEnv";
+import {ENV_API_TOKEN, ENV_DELETE_DOMAIN, ENV_DOMAIN_PRIVATE, getApiToken, getDeleteDomain} from "../TestEnv";
 import {EnabledIfEnvironmentVariable, EnabledIfEnvironmentVariables, itIf} from "../ConditionalTest";
 
 describe('DeleteDomainMessagesRequest Tests', function () {
@@ -12,7 +12,7 @@ describe('DeleteDomainMessagesRequest Tests', function () {
         )
     )('testDeleteDomainMessagesRequest', async () => {
 
-        const request = new DeleteDomainMessagesRequest(getPrivateDomain());
+        const request = new DeleteDomainMessagesRequest(getDeleteDomain());
         const response = await request.execute(getApiToken());
 
         expect(response.statusCode).toBe(200);

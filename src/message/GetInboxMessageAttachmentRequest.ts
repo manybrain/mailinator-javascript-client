@@ -9,7 +9,7 @@ const _resolveTemplateUrl = (domain: string, inbox: string, messageId: string, a
     return `https://api.mailinator.com/v2/domains/${domain}/inboxes/${inbox}/messages/${messageId}/attachments/${attachmentId}`;
 };
 
-export class GetAttachmentRequest implements Request<IncomingMessage> {
+export class GetInboxMessageAttachmentRequest implements Request<IncomingMessage> {
 
     constructor(private readonly domain: string,
                 private readonly inbox: string,

@@ -25,7 +25,7 @@ describe('GetMessageRequest Tests', function () {
         const inbox = getInboxTest();
         const message = await postMessage(domain, inbox);
 
-        const request = new GetMessageRequest(domain, inbox, message!.result!.id);
+        const request = new GetMessageRequest(domain, message!.result!.id);
         const response = await request.execute(getApiToken());
 
         expect(response.statusCode).toBe(200);
@@ -42,10 +42,10 @@ describe('GetMessageRequest Tests', function () {
             new EnabledIfEnvironmentVariable(ENV_DOMAIN_PRIVATE, "[^\\s]+"),
             new EnabledIfEnvironmentVariable(ENV_INBOX_TEST, "[^\\s]+")
         )
-    )('testMessageRequestWhenMessageDoesNotExist', async () => {
+    )('testInboxMessageRequestWhenMessageDoesNotExist', async () => {
 
         const random: string = uuid();
-        const request = new GetMessageRequest(getPrivateDomain(), getInboxTest(), random);
+        const request = new GetMessageRequest(getPrivateDomain(), random);
         await expect(request.execute(getApiToken())).rejects.toThrow()
     });
 

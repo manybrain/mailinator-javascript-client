@@ -1,4 +1,4 @@
-import {GetAttachmentsRequest} from '../../src/message/GetAttachmentsRequest';
+import {GetMessageAttachmentsRequest} from '../../src/message/GetMessageAttachmentsRequest';
 import {postMessage} from "../TestUtils";
 import {
     ENV_API_TOKEN,
@@ -12,18 +12,17 @@ import {
 } from "../TestEnv";
 import {EnabledIfEnvironmentVariable, EnabledIfEnvironmentVariables, itIf} from "../ConditionalTest";
 
-describe('GetAttachmentsRequest Tests', function () {
+describe('GetMessageAttachmentsRequest Tests', function () {
 
     itIf(
         new EnabledIfEnvironmentVariables(
             new EnabledIfEnvironmentVariable(ENV_API_TOKEN, "[^\\s]+"),
             new EnabledIfEnvironmentVariable(ENV_DOMAIN_PRIVATE, "[^\\s]+"),
-            new EnabledIfEnvironmentVariable(ENV_INBOX_TEST, "[^\\s]+"),
             new EnabledIfEnvironmentVariable(ENV_MESSAGE_WITH_ATTACHMENT_ID, "[^\\s]+")
         )
-    )('testAttachmentsRequest', async () => {
+    )('testMessageAttachmentsRequest', async () => {
 
-        const request = new GetAttachmentsRequest(getPrivateDomain(), getInboxTest(), getMessageWithAttachmentId());
+        const request = new GetMessageAttachmentsRequest(getPrivateDomain(), getMessageWithAttachmentId());
         const response = await request.execute(getApiToken());
 
         expect(response.statusCode).toBe(200);
@@ -45,16 +44,15 @@ describe('GetAttachmentsRequest Tests', function () {
     itIf(
         new EnabledIfEnvironmentVariables(
             new EnabledIfEnvironmentVariable(ENV_API_TOKEN, "[^\\s]+"),
-            new EnabledIfEnvironmentVariable(ENV_DOMAIN_PRIVATE, "[^\\s]+"),
-            new EnabledIfEnvironmentVariable(ENV_INBOX_TEST, "[^\\s]+")
+            new EnabledIfEnvironmentVariable(ENV_DOMAIN_PRIVATE, "[^\\s]+")
         )
-    )('testAttachmentsMissingRequest', async () => {
+    )('testMessageAttachmentsMissingRequest', async () => {
 
         const domain = getPrivateDomain();
         const inbox = getInboxTest();
         const message = await postMessage(domain, inbox);
 
-        const request = new GetAttachmentsRequest(domain, inbox, message!.result!.id);
+        const request = new GetMessageAttachmentsRequest(domain, message!.result!.id);
         const response = await request.execute(getApiToken());
 
         expect(response.statusCode).toBe(200);

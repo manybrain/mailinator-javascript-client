@@ -15,7 +15,7 @@ import {
 } from "./TestEnv";
 import {EnabledIfEnvironmentVariable, EnabledIfEnvironmentVariables, itIf} from "./ConditionalTest";
 import {MailinatorClient} from "../src/MailinatorClient";
-import {GetAttachmentRequest} from "../src/message/GetAttachmentRequest";
+import {GetInboxMessageAttachmentRequest} from "../src/message/GetInboxMessageAttachmentRequest";
 import * as fs from "fs";
 import {IRestResponse} from "typed-rest-client/RestClient";
 import {IncomingMessage} from "http";
@@ -52,13 +52,13 @@ describe('MailinatorClient Tests', function () {
             new EnabledIfEnvironmentVariable(ENV_MESSAGE_WITH_ATTACHMENT_ID, "[^\\s]+"),
             new EnabledIfEnvironmentVariable(ENV_ATTACHMENT_ID, "[^\\s]+")
         )
-    )('testAttachmentRequest', async () => {
+    )('testInboxMessageAttachmentRequest', async () => {
 
         const tmpobj = tmp.fileSync();
 
         const mailinatorClient: MailinatorClient = new MailinatorClient(getApiToken());
         const response: IRestResponse<IncomingMessage> = await mailinatorClient.request(
-            new GetAttachmentRequest(
+            new GetInboxMessageAttachmentRequest(
                 getPrivateDomain(),
                 getInboxTest(),
                 getMessageWithAttachmentId(),

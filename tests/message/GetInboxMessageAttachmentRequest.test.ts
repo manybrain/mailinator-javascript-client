@@ -1,5 +1,5 @@
 import * as tmp from 'tmp';
-import {GetAttachmentRequest} from '../../src/message/GetAttachmentRequest';
+import {GetInboxMessageAttachmentRequest} from '../../src/message/GetInboxMessageAttachmentRequest';
 import * as fs from "fs";
 import {
     ENV_API_TOKEN,
@@ -15,7 +15,7 @@ import {
 } from "../TestEnv";
 import {EnabledIfEnvironmentVariable, EnabledIfEnvironmentVariables, itIf} from "../ConditionalTest";
 
-describe('GetAttachmentRequest Tests', function () {
+describe('GetInboxMessageAttachmentRequest Tests', function () {
 
     itIf(
         new EnabledIfEnvironmentVariables(
@@ -25,11 +25,11 @@ describe('GetAttachmentRequest Tests', function () {
             new EnabledIfEnvironmentVariable(ENV_MESSAGE_WITH_ATTACHMENT_ID, "[^\\s]+"),
             new EnabledIfEnvironmentVariable(ENV_ATTACHMENT_ID, "[^\\s]+")
         )
-    )('testAttachmentRequest', async () => {
+    )('testInboxMessageAttachmentRequest', async () => {
 
         const tmpobj = tmp.fileSync();
 
-        const request = new GetAttachmentRequest(getPrivateDomain(), getInboxTest(), getMessageWithAttachmentId(), getAttachmentId());
+        const request = new GetInboxMessageAttachmentRequest(getPrivateDomain(), getInboxTest(), getMessageWithAttachmentId(), getAttachmentId());
         const response = await request.execute(getApiToken());
 
         expect(response).toBeTruthy();

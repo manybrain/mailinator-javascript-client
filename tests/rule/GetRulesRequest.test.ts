@@ -13,7 +13,7 @@ describe('GetRulesRequest Tests', function () {
 
         const domain = await getFirstAvailableDomain();
 
-        const request = new GetRulesRequest(domain._id);
+        const request = new GetRulesRequest(domain.name);
         const response = await request.execute(getApiToken());
         expect(response.statusCode).toBe(200);
         const result = response.result;

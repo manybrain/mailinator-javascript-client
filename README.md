@@ -51,6 +51,12 @@ Most of the tests require env variables with valid values. Visit tests source co
 * `MAILINATOR_TEST_MESSAGE_WITH_ATTACHMENT_ID` - existing message id within inbox (see above) within private domain (see above); see also https://manybrain.github.io/m8rdocs/#fetch-message
 * `MAILINATOR_TEST_ATTACHMENT_ID` - existing message id within inbox (see above) within private domain (see above); see also https://manybrain.github.io/m8rdocs/#fetch-message
 * `MAILINATOR_TEST_DELETE_DOMAIN` - don't use it unless you are 100% sure what you are doing
+* `MAILINATOR_TEST_WEBHOOKTOKEN_PRIVATEDOMAIN` - private domain for webhook token
+* `MAILINATOR_TEST_WEBHOOKTOKEN_CUSTOMSERVICE` - custom service for webhook token
+* `MAILINATOR_TEST_AUTH_SECRET` - authenticator secret
+* `MAILINATOR_TEST_AUTH_ID` - authenticator id
+* `MAILINATOR_TEST_WEBHOOK_INBOX` - inbox for webhook
+* `MAILINATOR_TEST_WEBHOOK_CUSTOMSERVICE` - custom service for webhook
 
 #### Create index
 

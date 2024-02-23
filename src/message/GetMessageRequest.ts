@@ -4,14 +4,13 @@ import {IRequestOptions, IRestResponse} from 'typed-rest-client/RestClient';
 import restClient from '../MailinatorRestClient';
 import {AUTHORIZATION} from '../Constants';
 
-const _resolveTemplateUrl = (domain: string, inbox: string, messageId: string) => {
-    return `https://api.mailinator.com/v2/domains/${domain}/inboxes/${inbox}/messages/${messageId}`;
+const _resolveTemplateUrl = (domain: string, messageId: string) => {
+    return `https://api.mailinator.com/v2/domains/${domain}/messages/${messageId}`;
 };
 
 export class GetMessageRequest implements Request<Message> {
 
     constructor(private readonly domain: string,
-                private readonly inbox: string,
                 private readonly messageId: string) {
     }
 
@@ -23,7 +22,7 @@ export class GetMessageRequest implements Request<Message> {
             }
         };
 
-        return restClient.get<Message>(_resolveTemplateUrl(this.domain, this.inbox, this.messageId), _options);
+        return restClient.get<Message>(_resolveTemplateUrl(this.domain, this.messageId), _options);
     }
 
 }
