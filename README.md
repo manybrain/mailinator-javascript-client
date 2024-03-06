@@ -30,7 +30,7 @@ const response: IRestResponse<Inbox> = await mailinatorClient.request(
              
 ```typescript                                
 const response: IRestResponse<Message> = await mailinatorClient.request(
-            new GetMessageRequest("yourDomainNameHere", "yourInboxNameHere", "yourMessageIdHere")
+            new GetMessageRequest("yourDomainNameHere", "yourMessageIdHere")
         );
 ```
 
