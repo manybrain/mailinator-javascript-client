@@ -11,16 +11,24 @@ const _resolveTemplateUrl = (domain: string, messageId: string) => {
 export class GetMessageRequest implements Request<Message> {
 
     constructor(private readonly domain: string,
-                private readonly messageId: string) {
+                private readonly messageId: string,
+                private readonly del?: string) {
     }
 
     execute(apiToken: string): Promise<IRestResponse<Message>> {
 
         const _options: IRequestOptions = {
+            queryParameters: {
+                params: {}
+            },
             additionalHeaders: {
                 [AUTHORIZATION]: apiToken
             }
         };
+
+        if (this.del !== undefined) {
+            _options.queryParameters!.params['delete'] = this.del
+        }
 
         return restClient.get<Message>(_resolveTemplateUrl(this.domain, this.messageId), _options);
     }

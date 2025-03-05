@@ -1,10 +1,6 @@
 import * as restm from 'typed-rest-client/RestClient';
-import { COMMON_USER_AGENT, USERAGENT } from './Constants';
+import { COMMON_USER_AGENT } from './Constants';
 
-const defaultHeaders = {
-    [USERAGENT]: COMMON_USER_AGENT,
-  };
-
-const restClient: restm.RestClient = new restm.RestClient('typed-rest-client', undefined, undefined, defaultHeaders);
+const restClient: restm.RestClient = new restm.RestClient(COMMON_USER_AGENT, undefined, undefined, { socketTimeout: 125000});
 
 export default restClient;

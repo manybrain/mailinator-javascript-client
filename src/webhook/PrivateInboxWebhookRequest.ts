@@ -5,7 +5,7 @@ import { Webhook } from './Webhook';
 import { WebhookResponseStatus } from './WebhookResponseStatus';
 
 const _resolveTemplateUrl = (whToken: string, inbox: string) => {
-    return `https://api.mailinator.com/api/v2/domains/${whToken}/webhook/${inbox}`;
+    return `https://api.mailinator.com/api/v2/domains/private/webhook/${inbox}/?whtoken=${whToken}`;
 };
 
 export class PrivateInboxWebhookRequest implements RequestWithoutToken<WebhookResponseStatus> {

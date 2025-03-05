@@ -19,7 +19,11 @@ export class GetInboxRequest implements Request<Inbox> {
                 private readonly skip?: number,
                 private readonly limit?: number,
                 private readonly sort?: Sort,
-                private readonly decodeSubject?: boolean) {
+                private readonly decodeSubject?: boolean,
+                private readonly cursor?: string,
+                private readonly full?: boolean,
+                private readonly del?: string,
+                private readonly wait?: string) {
     }
 
     execute(apiToken: string): Promise<IRestResponse<Inbox>> {
@@ -44,6 +48,18 @@ export class GetInboxRequest implements Request<Inbox> {
         }
         if (this.decodeSubject !== undefined) {
             _options.queryParameters!.params['decode_subject'] = this.decodeSubject.toString()
+        }
+        if (this.cursor !== undefined) {
+            _options.queryParameters!.params['cursor'] = this.cursor
+        }
+        if (this.full !== undefined) {
+            _options.queryParameters!.params['full'] = this.full.toString()
+        }
+        if (this.del !== undefined) {
+            _options.queryParameters!.params['delete'] = this.del
+        }
+        if (this.wait !== undefined) {
+            _options.queryParameters!.params['wait'] = this.wait
         }
 
         return restClient.get<Inbox>(_resolveTemplateUrl(this.domain, this.inbox), _options);
