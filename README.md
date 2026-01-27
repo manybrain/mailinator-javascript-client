@@ -62,3 +62,32 @@ Most of the tests require env variables with valid values. Visit tests source co
 
 * Install https://www.npmjs.com/package/create-ts-index `npm install create-ts-index -g`
 * Run `cti create .`
+
+#### Version Management
+
+To maintain version consistency across package.json, git tags, and NPM, always use the `npm version` command:
+
+```bash
+# For patch releases (1.0.6 -> 1.0.7)
+npm version patch
+
+# For minor releases (1.0.6 -> 1.1.0)
+npm version minor
+
+# For major releases (1.0.6 -> 2.0.0)
+npm version major
+```
+
+This command will:
+1. Update the version in `package.json`
+2. Create a git commit with the version change
+3. Create a git tag (e.g., `v1.0.7`)
+4. Automatically push the commit and tag to GitHub (via `postversion` script)
+
+After running `npm version`, publish to NPM:
+
+```bash
+npm publish
+```
+
+**Important**: Never manually edit the version in `package.json`. Always use `npm version` to ensure package.json, git tags, and NPM versions stay in sync.
