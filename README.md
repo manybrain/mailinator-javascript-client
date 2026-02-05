@@ -38,25 +38,19 @@ const response: IRestResponse<Message> = await mailinatorClient.request(
 
 * `npm test`
 
+##### Environment Configuration
+
+Copy `.env.example` to `.env` and fill in your values:
+
+```bash
+cp .env.example .env
+```
+
 By default, most of the tests are skipped. 
 
 ##### Build with tests
 
 Most of the tests require env variables with valid values. Visit tests source code and review `EnabledIfEnvironmentVariable` wrapped parts. The more env variables you set, the more tests are run.
-
-* `MAILINATOR_TEST_API_TOKEN` - API tokens for authentication; basic requirement across many tests;see also https://manybrain.github.io/m8rdocs/#api-authentication
-* `MAILINATOR_TEST_DOMAIN_PRIVATE` - private domain; visit https://www.mailinator.com/
-* `MAILINATOR_TEST_INBOX` - some already existing inbox within the private domain
-* `MAILINATOR_TEST_PHONE_NUMBER` - associated phone number within the private domain; see also https://manybrain.github.io/m8rdocs/#fetch-an-sms-messages
-* `MAILINATOR_TEST_MESSAGE_WITH_ATTACHMENT_ID` - existing message id within inbox (see above) within private domain (see above); see also https://manybrain.github.io/m8rdocs/#fetch-message
-* `MAILINATOR_TEST_ATTACHMENT_ID` - existing message id within inbox (see above) within private domain (see above); see also https://manybrain.github.io/m8rdocs/#fetch-message
-* `MAILINATOR_TEST_DELETE_DOMAIN` - don't use it unless you are 100% sure what you are doing
-* `MAILINATOR_TEST_WEBHOOKTOKEN_PRIVATEDOMAIN` - private domain for webhook token
-* `MAILINATOR_TEST_WEBHOOKTOKEN_CUSTOMSERVICE` - custom service for webhook token
-* `MAILINATOR_TEST_AUTH_SECRET` - authenticator secret
-* `MAILINATOR_TEST_AUTH_ID` - authenticator id
-* `MAILINATOR_TEST_WEBHOOK_INBOX` - inbox for webhook
-* `MAILINATOR_TEST_WEBHOOK_CUSTOMSERVICE` - custom service for webhook
 
 #### Create index
 
