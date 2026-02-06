@@ -207,4 +207,4 @@ const client = new MailinatorClient('YOUR_API_TOKEN');
 
 ## Where to look for more request types
 
-The SDK organizes functionality in the `message`, `rule`, `domain`, `authenticator`, `stats`, and `webhook` folders. Each contains Request classes for corresponding API endpoints. See REFERENCE.md for a short index.
+The SDK organizes functionality in the `message`, `rule`, `domain`, `authenticator`, `stats`, and `webhook` folders. Each contains Request classes for corresponding API endpoints. See [REFERENCE.md](REFERENCE.md) for a complete list.
