@@ -1,62 +1,42 @@
-#### [Mailinator](https://www.mailinator.com/) REST API client for JavaScript applications. 
+# Mailinator JavaScript SDK
+
+The official Mailinator JavaScript SDK. This REST API client is implemented as a thin wrapper around the [Mailinator API](https://www.mailinator.com/documentation/docs/api/). The OpenAPI specification will be the source of truth for this client.
 
 Uses [Microsoft's typed-rest-client](https://github.com/microsoft/typed-rest-client). All requests are async functions.
 
-#### Usage example
+## API Reference
 
-##### Create MailinatorClient
+See [Mailinator's API Reference](https://www.mailinator.com/documentation/docs/api/) for all of the currently available API endpoints.
 
-```typescript
-const mailinatorClient: MailinatorClient = new MailinatorClient("yourApiKeyHere");
-```
+## Request Classes and Deprecations
 
-###### Get inbox from domain
+For the list of available Request classes in this SDK, see [REFERENCE.md](REFERENCE.md).
 
-```typescript
-const response: IRestResponse<Inbox> = await mailinatorClient.request(
-            new GetInboxRequest("yourDomainNameHere")
-        );
-```
+Note that some of the Request classes are deprecated and will be removed in a future version. See [ROADMAP.md](ROADMAP.md) for more information.
 
-###### Get paginated messages from domain and inbox
+## Usage examples
 
-```typescript
-const response: IRestResponse<Inbox> = await mailinatorClient.request(
-            new GetInboxRequest("yourDomainNameHere", "yourInboxNameHere", 10, 20, Sort.DESC, true)
-        );
-```
-                                                       
-###### Get message
-             
-```typescript                                
-const response: IRestResponse<Message> = await mailinatorClient.request(
-            new GetMessageRequest("yourDomainNameHere", "yourMessageIdHere")
-        );
-```
+See [EXAMPLES.md](EXAMPLES.md) for more code examples on how to use the client.
+
+## Development
 
 #### Build tests
 
 * `npm test`
 
+#### Environment Configuration
+
+Copy `.env.example` to `.env` and fill in your values:
+
+```bash
+cp .env.example .env
+```
+
 By default, most of the tests are skipped. 
 
-##### Build with tests
+#### Build with tests
 
 Most of the tests require env variables with valid values. Visit tests source code and review `EnabledIfEnvironmentVariable` wrapped parts. The more env variables you set, the more tests are run.
-
-* `MAILINATOR_TEST_API_TOKEN` - API tokens for authentication; basic requirement across many tests;see also https://manybrain.github.io/m8rdocs/#api-authentication
-* `MAILINATOR_TEST_DOMAIN_PRIVATE` - private domain; visit https://www.mailinator.com/
-* `MAILINATOR_TEST_INBOX` - some already existing inbox within the private domain
-* `MAILINATOR_TEST_PHONE_NUMBER` - associated phone number within the private domain; see also https://manybrain.github.io/m8rdocs/#fetch-an-sms-messages
-* `MAILINATOR_TEST_MESSAGE_WITH_ATTACHMENT_ID` - existing message id within inbox (see above) within private domain (see above); see also https://manybrain.github.io/m8rdocs/#fetch-message
-* `MAILINATOR_TEST_ATTACHMENT_ID` - existing message id within inbox (see above) within private domain (see above); see also https://manybrain.github.io/m8rdocs/#fetch-message
-* `MAILINATOR_TEST_DELETE_DOMAIN` - don't use it unless you are 100% sure what you are doing
-* `MAILINATOR_TEST_WEBHOOKTOKEN_PRIVATEDOMAIN` - private domain for webhook token
-* `MAILINATOR_TEST_WEBHOOKTOKEN_CUSTOMSERVICE` - custom service for webhook token
-* `MAILINATOR_TEST_AUTH_SECRET` - authenticator secret
-* `MAILINATOR_TEST_AUTH_ID` - authenticator id
-* `MAILINATOR_TEST_WEBHOOK_INBOX` - inbox for webhook
-* `MAILINATOR_TEST_WEBHOOK_CUSTOMSERVICE` - custom service for webhook
 
 #### Create index
 
