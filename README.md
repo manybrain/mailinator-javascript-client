@@ -8,7 +8,11 @@ Uses [Microsoft's typed-rest-client](https://github.com/microsoft/typed-rest-cli
 
 See [Mailinator's API Reference](https://www.mailinator.com/documentation/docs/api/) for all of the currently available API endpoints.
 
+## Request Classes and Deprecations
+
 For the list of available Request classes in this SDK, see [REFERENCE.md](REFERENCE.md).
+
+Note that some of the Request classes are deprecated and will be removed in a future version. See [ROADMAP.md](ROADMAP.md) for more information.
 
 ## Usage examples
 

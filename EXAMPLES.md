@@ -100,7 +100,7 @@ const client = new MailinatorClient('YOUR_API_TOKEN');
 })();
 ```
 
-- Download an attachment (stream):
+- Get (download) an attachment:
 
 ```javascript
 const { MailinatorClient, GetMessageAttachmentRequest } = require('mailinator-client');
@@ -117,41 +117,7 @@ const client = new MailinatorClient('YOUR_API_TOKEN');
 })();
 ```
 
-- Create a domain (admin/private domains API):
-
-```javascript
-const { MailinatorClient, CreateDomainRequest } = require('mailinator-client');
-
-const client = new MailinatorClient('YOUR_API_TOKEN');
-
-(async () => {
-    const resp = await client.request(new CreateDomainRequest('my-new-domain.com'));
-    console.log(resp.result);
-})();
-```
-
-- Create a routing/rule for a domain:
-
-```javascript
-const { MailinatorClient, CreateRuleRequest } = require('mailinator-client');
-
-const client = new MailinatorClient('YOUR_API_TOKEN');
-
-const rule = {
-    name: 'Block spam sender',
-    active: true,
-    // condition(s) and action(s) per SDK types
-    conditions: [ /* ... */ ],
-    actions: [ /* ... */ ]
-};
-
-(async () => {
-    const resp = await client.request(new CreateRuleRequest('domainId', rule));
-    console.log(resp.result);
-})();
-```
-
-- Get account/team stats:
+- Get team statistics:
 
 ```javascript
 const { MailinatorClient, GetStatsRequest } = require('mailinator-client');
@@ -160,7 +126,7 @@ const client = new MailinatorClient('YOUR_API_TOKEN');
 
 (async () => {
     const resp = await client.request(new GetStatsRequest());
-    console.log(resp.result);
+    console.log(JSON.stringify(resp.result, null, 2));
 })();
 ```
 

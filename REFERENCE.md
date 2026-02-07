@@ -33,7 +33,7 @@ const { GetInboxRequest, ... } = require('mailinator-client');
 *   `GetSmsInboxRequest(domain, phone)`
 
 ## Rule
-**Source:** `src/rule/`
+**Source:** `src/rule/` - *Note: This doesn't work and all are deprecated.*
 
 *   `CreateRuleRequest(domainId, rule)`
 *   `GetRulesRequest(domainId)`
@@ -45,8 +45,8 @@ const { GetInboxRequest, ... } = require('mailinator-client');
 ## Domain
 **Source:** `src/domain/`
 
-*   `CreateDomainRequest(domainId)`
-*   `DeleteDomainRequest(domainId)`
+*   `CreateDomainRequest(domainId)` - *Note: This doesn't work and is deprecated.*
+*   `DeleteDomainRequest(domainId)` - *Note: This doesn't work and is deprecated.*
 *   `GetDomainRequest(domainId)`
 *   `GetDomainsRequest()`
 
@@ -54,7 +54,7 @@ const { GetInboxRequest, ... } = require('mailinator-client');
 **Source:** `src/authenticator/`
 
 *   `GetAuthenticatorsRequest()`
-*   `GetAuthenticatorRequest()` - *Note: This seems to exist alongside the plural version.*
+*   `GetAuthenticatorRequest()`
 *   `GetAuthenticatorByIdRequest(authId)`
 *   `GetAuthenticatorsByIdRequest(ids)`
 *   `InstantTOTP2FACodeRequest(authenticatorId, secret)`
