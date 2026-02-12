@@ -7,6 +7,6 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 ## [1.0.9] - 2026-02-11
 
 ### Changed
-- Marked deprecated rule request classes with JSDoc `@deprecated` tags to surface warnings in editors and builds.
-- Marked `DeleteDomainRequest` with a JSDoc `@deprecated` tag to surface warnings in editors and builds.
-- Clarified deprecation/removal note for `CreateDomainRequest` in the reference documentation.
+- Marked all Rule request classes with JSDoc `@deprecated` tags to surface warnings in editors and builds.
+- Marked `DeleteDomainRequest`, `CreateDomainRequest`, with a JSDoc `@deprecated` tag to surface warnings in editors and builds.
+- Updated dependencies to address security vulnerabilities.
