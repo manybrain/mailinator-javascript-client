@@ -33,7 +33,7 @@ const { GetInboxRequest, ... } = require('mailinator-client');
 *   `GetSmsInboxRequest(domain, phone)`
 
 ## Rule
-**Source:** `src/rule/` - *Note: This doesn't work and all are deprecated.*
+**Source:** `src/rule/` - *Note: This doesn't work and all are deprecated. They will be removed in a future release.*
 
 *   `CreateRuleRequest(domainId, rule)`
 *   `GetRulesRequest(domainId)`
@@ -45,8 +45,8 @@ const { GetInboxRequest, ... } = require('mailinator-client');
 ## Domain
 **Source:** `src/domain/`
 
-*   `CreateDomainRequest(domainId)` - *Note: This doesn't work and is deprecated.*
-*   `DeleteDomainRequest(domainId)` - *Note: This doesn't work and is deprecated.*
+*   `CreateDomainRequest(domainId)` - *Note: This doesn't work and is deprecated; it will be removed in a future release.*
+*   `DeleteDomainRequest(domainId)` - *Note: This doesn't work and is deprecated. it will be removed in a future release.**
 *   `GetDomainRequest(domainId)`
 *   `GetDomainsRequest()`
 

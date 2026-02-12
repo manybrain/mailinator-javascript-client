@@ -8,6 +8,7 @@ const _resolveTemplateUrl = (domainId: string, ruleId: string) => {
     return `https://api.mailinator.com/api/v2/domains/${domainId}/rules/${ruleId}/disable`;
 };
 
+/** @deprecated This endpoint is deprecated and will be removed in a future release. */
 export class DisableRuleRequest implements Request<ResponseStatus> {
 
     constructor(private readonly domainId: string,
