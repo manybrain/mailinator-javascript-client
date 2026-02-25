@@ -5,7 +5,7 @@ import {AUTHORIZATION} from '../Constants';
 import { RawData } from './RawData';
 
 const _resolveTemplateUrl = (domain: string, messageId: string) => {
-    return `https://api.mailinator.com/v2/domains/${domain}/messages/${messageId}/raw`;
+    return `https://api.mailinator.com/api/v2/domains/${domain}/messages/${messageId}/raw`;
 };
 
 export class GetMessageRawRequest implements Request<string> {

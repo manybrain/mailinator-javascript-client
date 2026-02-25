@@ -5,7 +5,7 @@ import restClient from '../MailinatorRestClient';
 import {AUTHORIZATION} from '../Constants';
 
 const _resolveTemplateUrl = (domain: string) => {
-    return `https://api.mailinator.com/v2/domains/${domain}/messages/*`;
+    return `https://api.mailinator.com/api/v2/domains/${domain}/messages/*`;
 };
 
 export class GetLatestMessagesRequest implements Request<Inbox> {

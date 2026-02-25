@@ -5,7 +5,7 @@ import {AUTHORIZATION} from '../Constants';
 import {Domains} from "./Domains";
 
 const _resolveTemplateUrl = () => {
-    return `https://api.mailinator.com/v2/domains/`;
+    return `https://api.mailinator.com/api/v2/domains/`;
 };
 
 export class GetDomainsRequest implements Request<Domains> {

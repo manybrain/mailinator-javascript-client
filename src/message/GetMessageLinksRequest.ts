@@ -5,7 +5,7 @@ import {AUTHORIZATION} from '../Constants';
 import {Links} from "./Links";
 
 const _resolveTemplateUrl = (domain: string, messageId: string) => {
-    return `https://api.mailinator.com/v2/domains/${domain}/messages/${messageId}/links`;
+    return `https://api.mailinator.com/api/v2/domains/${domain}/messages/${messageId}/links`;
 };
 
 export class GetMessageLinksRequest implements Request<Links> {

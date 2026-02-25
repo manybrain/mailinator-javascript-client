@@ -6,7 +6,7 @@ import {PostedMessage} from './PostedMessage';
 import {AUTHORIZATION} from "../Constants";
 
 const _resolveTemplateUrl = (domain: string, inbox: string) => {
-    return `https://api.mailinator.com/v2/domains/${domain}/inboxes/${inbox}/messages`;
+    return `https://api.mailinator.com/api/v2/domains/${domain}/inboxes/${inbox}/messages`;
 };
 
 export class PostMessageRequest implements Request<PostedMessage> {
