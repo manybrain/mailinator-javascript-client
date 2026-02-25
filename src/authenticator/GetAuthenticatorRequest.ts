@@ -5,7 +5,7 @@ import {AUTHORIZATION} from '../Constants';
 import { Authenticators } from './Authenticators';
 
 const _resolveTemplateUrl = () => {
-    return `https://api.mailinator.com/v2/authenticator/`;
+    return `https://api.mailinator.com/api/v2/authenticator/`;
 };
 
 export class GetAuthenticatorRequest implements Request<Authenticators> {

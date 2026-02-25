@@ -6,6 +6,7 @@
     "strictNullChecks": true,
     "sourceMap": false,
     "skipLibCheck": true,
+    "resolveJsonModule": true,
     "outDir": "./lib",
     "declaration": true,
     "typeRoots": [

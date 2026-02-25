@@ -5,7 +5,7 @@ import {AUTHORIZATION} from '../Constants';
 import { SmtpLogs } from './SmtpLogs';
 
 const _resolveTemplateUrl = (domain: string, messageId: string) => {
-    return `https://api.mailinator.com/v2/domains/${domain}/messages/${messageId}/smtplog`;
+    return `https://api.mailinator.com/api/v2/domains/${domain}/messages/${messageId}/smtplog`;
 };
 
 export class GetMessageSmtpLogRequest implements Request<SmtpLogs> {

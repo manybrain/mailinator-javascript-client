@@ -8,7 +8,7 @@ const _resolveTemplateUrl = (domain: string, inbox: string | undefined) => {
     if (inbox === undefined) {
         inbox = '';
     }
-    return `https://api.mailinator.com/v2/domains/${domain}/inboxes/${inbox}/messages/*`;
+    return `https://api.mailinator.com/api/v2/domains/${domain}/inboxes/${inbox}/messages/*`;
 };
 
 export class GetLatestInboxMessagesRequest implements Request<Inbox> {

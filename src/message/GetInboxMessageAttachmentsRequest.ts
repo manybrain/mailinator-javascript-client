@@ -5,7 +5,7 @@ import {IRequestOptions, IRestResponse} from 'typed-rest-client/RestClient';
 import restClient from '../MailinatorRestClient';
 
 const _resolveTemplateUrl = (domain: string, inbox: string, messageId: string) => {
-    return `https://api.mailinator.com/v2/domains/${domain}/inboxes/${inbox}/messages/${messageId}/attachments`;
+    return `https://api.mailinator.com/api/v2/domains/${domain}/inboxes/${inbox}/messages/${messageId}/attachments`;
 };
 
 export class GetInboxMessageAttachmentsRequest implements Request<Attachments> {

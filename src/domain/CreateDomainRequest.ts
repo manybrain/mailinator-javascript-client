@@ -8,6 +8,7 @@ const _resolveTemplateUrl = (domainId: string) => {
     return `https://api.mailinator.com/api/v2/domains/${domainId}`;
 };
 
+/** @deprecated This endpoint is deprecated and will be removed in a future release. */
 export class CreateDomainRequest implements Request<ResponseStatus> {
 
     constructor(private readonly domainId: string) {

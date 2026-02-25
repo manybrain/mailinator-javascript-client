@@ -1,10 +1,10 @@
-import {Request} from '../Request';
-import {IRequestOptions, IRestResponse} from 'typed-rest-client/RestClient';
+import { Request } from '../Request';
+import { IRequestOptions, IRestResponse } from 'typed-rest-client/RestClient';
 import restClient from '../MailinatorRestClient';
-import {AUTHORIZATION} from '../Constants';
-import {Stats} from "./Stats";
+import { AUTHORIZATION } from '../Constants';
+import { Stats } from "./Stats";
 
-const URL = 'https://api.mailinator.com/v2/team/stats'
+const URL = 'https://api.mailinator.com/api/v2/team/stats'
 
 export class GetStatsRequest implements Request<Stats> {
 

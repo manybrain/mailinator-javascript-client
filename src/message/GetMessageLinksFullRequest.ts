@@ -5,7 +5,7 @@ import {AUTHORIZATION} from '../Constants';
 import { LinksFull } from './LinksFull';
 
 const _resolveTemplateUrl = (domain: string, messageId: string) => {
-    return `https://api.mailinator.com/v2/domains/${domain}/messages/${messageId}/linksfull`;
+    return `https://api.mailinator.com/api/v2/domains/${domain}/messages/${messageId}/linksfull`;
 };
 
 export class GetMessageLinksFullRequest implements Request<LinksFull> {

@@ -5,7 +5,7 @@ import restClient from '../MailinatorRestClient';
 import {AUTHORIZATION} from '../Constants';
 
 const _resolveTemplateUrl = (domain: string, phoneNumber: string) => {
-    return `https://api.mailinator.com/v2/domains/${domain}/inboxes/${phoneNumber}`;
+    return `https://api.mailinator.com/api/v2/domains/${domain}/inboxes/${phoneNumber}`;
 };
 
 export class GetSmsInboxRequest implements Request<Inbox> {

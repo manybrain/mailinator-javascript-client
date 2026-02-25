@@ -8,6 +8,7 @@ const _resolveTemplateUrl = (domainId: string, ruleId: string) => {
     return `https://api.mailinator.com/api/v2/domains/${domainId}/rules/${ruleId}`;
 };
 
+/** @deprecated This endpoint is deprecated and will be removed in a future release. */
 export class DeleteRuleRequest implements Request<ResponseStatus> {
 
     constructor(private readonly domainId: string,

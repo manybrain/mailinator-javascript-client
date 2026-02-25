@@ -1,10 +1,10 @@
-import {Request} from '../Request';
-import {IRequestOptions, IRestResponse} from 'typed-rest-client/RestClient';
+import { Request } from '../Request';
+import { IRequestOptions, IRestResponse } from 'typed-rest-client/RestClient';
 import restClient from '../MailinatorRestClient';
-import {AUTHORIZATION} from '../Constants';
+import { AUTHORIZATION } from '../Constants';
 import { TeamInfo } from './TeamInfo';
 
-const URL = 'https://api.mailinator.com/v2/teaminfo'
+const URL = 'https://api.mailinator.com/api/v2/teaminfo'
 
 export class GetTeamInfoRequest implements Request<TeamInfo> {
 

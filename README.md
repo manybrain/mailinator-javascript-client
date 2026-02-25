@@ -42,3 +42,10 @@ Most of the tests require env variables with valid values. Visit tests source co
 
 * Install https://www.npmjs.com/package/create-ts-index `npm install create-ts-index -g`
 * Run `cti create .`
+
+## Publishing Changes
+
+1. Merge to main
+2. Update version + tag (npm version patch|minor|major)
+3. Push tags (git push --follow-tags)
+4. Publish (npm publish)

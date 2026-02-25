@@ -1,29 +1,29 @@
-import {Inbox} from './Inbox';
-import {Sort} from './Sort';
-import {Request} from '../Request';
-import {IRequestOptions, IRestResponse} from 'typed-rest-client/RestClient';
+import { Inbox } from './Inbox';
+import { Sort } from './Sort';
+import { Request } from '../Request';
+import { IRequestOptions, IRestResponse } from 'typed-rest-client/RestClient';
 import restClient from '../MailinatorRestClient';
-import {AUTHORIZATION} from '../Constants';
+import { AUTHORIZATION } from '../Constants';
 
 const _resolveTemplateUrl = (domain: string, inbox: string | undefined) => {
     if (inbox === undefined) {
         inbox = '';
     }
-    return `https://api.mailinator.com/v2/domains/${domain}/inboxes/${inbox}`;
+    return `https://api.mailinator.com/api/v2/domains/${domain}/inboxes/${inbox}`;
 };
 
 export class GetInboxRequest implements Request<Inbox> {
 
     constructor(private readonly domain: string,
-                private readonly inbox?: string,
-                private readonly skip?: number,
-                private readonly limit?: number,
-                private readonly sort?: Sort,
-                private readonly decodeSubject?: boolean,
-                private readonly cursor?: string,
-                private readonly full?: boolean,
-                private readonly del?: string,
-                private readonly wait?: string) {
+        private readonly inbox?: string,
+        private readonly skip?: number,
+        private readonly limit?: number,
+        private readonly sort?: Sort,
+        private readonly decodeSubject?: boolean,
+        private readonly cursor?: string,
+        private readonly full?: boolean,
+        private readonly del?: string,
+        private readonly wait?: string) {
     }
 
     execute(apiToken: string): Promise<IRestResponse<Inbox>> {

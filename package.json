@@ -24,7 +24,7 @@
   "author": "Manybrain, LLC <support@manybrain.com> (http://manybrain.com)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/manybrain/mailinator-javascript-client.git"
+    "url": "git+https://github.com/manybrain/mailinator-javascript-client.git"
   },
   "license": "The Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0.txt)",
   "bugs": {
@@ -37,10 +37,10 @@
     "typed-rest-client": "^1.7.1"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.25",
-    "jest": "^24.9.0",
-    "tmp": "^0.1.0",
-    "ts-jest": "^24.3.0",
-    "typescript": "^3.7.4"
+    "@types/jest": "^30.0.0",
+    "jest": "^30.2.0",
+    "tmp": "^0.2.5",
+    "ts-jest": "^29.4.6",
+    "typescript": "^5.9.3"
   }
 }

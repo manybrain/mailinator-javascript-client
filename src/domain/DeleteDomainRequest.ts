@@ -1,13 +1,14 @@
-import {Request} from '../Request';
-import {IRequestOptions, IRestResponse} from 'typed-rest-client/RestClient';
+import { Request } from '../Request';
+import { IRequestOptions, IRestResponse } from 'typed-rest-client/RestClient';
 import restClient from '../MailinatorRestClient';
-import {AUTHORIZATION} from '../Constants';
-import {ResponseStatus} from "../ResponseStatus";
+import { AUTHORIZATION } from '../Constants';
+import { ResponseStatus } from "../ResponseStatus";
 
 const _resolveTemplateUrl = (domainId: string) => {
-    return `https://api.mailinator.com/v2/domains/${domainId}`;
+    return `https://api.mailinator.com/api/v2/domains/${domainId}`;
 };
 
+/** @deprecated This endpoint is deprecated and will be removed in a future release. */
 export class DeleteDomainRequest implements Request<ResponseStatus> {
 
     constructor(private readonly domainId: string) {
