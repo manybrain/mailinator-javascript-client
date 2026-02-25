@@ -49,4 +49,35 @@ describe('GetInboxMessageRequest Tests', function () {
         await expect(request.execute(getApiToken())).rejects.toThrow()
     });
 
+    itIf(
+        new EnabledIfEnvironmentVariables(
+            new EnabledIfEnvironmentVariable(ENV_API_TOKEN, "[^\\s]+"),
+            new EnabledIfEnvironmentVariable(ENV_DOMAIN_PRIVATE, "[^\\s]+"),
+            new EnabledIfEnvironmentVariable(ENV_INBOX_TEST, "[^\\s]+")
+        )
+    )('testGetInboxMessageAndDeleteRequest', async () => {
+
+        jest.setTimeout(60000);
+
+        const domain = getPrivateDomain();
+        const inbox = getInboxTest();
+        const message = await postMessage(domain, inbox);
+
+        const request = new GetInboxMessageRequest(domain, inbox, message!.result!.id, "10s");
+        const response = await request.execute(getApiToken());
+
+        expect(response.statusCode).toBe(200);
+        const result = response.result;
+        expect(result).toBeTruthy();
+
+        try {
+            await new Promise(resolve => setTimeout(resolve, 45000));
+        } catch (error) {
+            console.error("Interrupted during wait", error);
+        }
+
+        const request2 = new GetInboxMessageRequest(domain, inbox, message!.result!.id)
+        await expect(request2.execute(getApiToken())).rejects.toThrow()
+    });
+
 });

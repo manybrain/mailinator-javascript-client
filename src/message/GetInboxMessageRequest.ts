@@ -12,16 +12,24 @@ export class GetInboxMessageRequest implements Request<Message> {
 
     constructor(private readonly domain: string,
         private readonly inbox: string,
-        private readonly messageId: string) {
+        private readonly messageId: string,
+        private readonly del?: string) {
     }
 
     execute(apiToken: string): Promise<IRestResponse<Message>> {
 
         const _options: IRequestOptions = {
+            queryParameters: {
+                params: {}
+            },
             additionalHeaders: {
                 [AUTHORIZATION]: apiToken
             }
         };
+
+        if (this.del !== undefined) {
+            _options.queryParameters!.params['delete'] = this.del
+        }
 
         return restClient.get<Message>(_resolveTemplateUrl(this.domain, this.inbox, this.messageId), _options);
     }
