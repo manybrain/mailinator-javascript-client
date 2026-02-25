@@ -1,11 +1,11 @@
-import {Request} from '../Request';
-import {IRequestOptions, IRestResponse} from 'typed-rest-client/RestClient';
+import { Request } from '../Request';
+import { IRequestOptions, IRestResponse } from 'typed-rest-client/RestClient';
 import restClient from '../MailinatorRestClient';
-import {AUTHORIZATION} from '../Constants';
+import { AUTHORIZATION } from '../Constants';
 import { InstantTOTP2FACode } from './InstantTOTP2FACode';
 
 const _resolveTemplateUrl = (totpSecretKey: string) => {
-    return `https://api.mailinator.com/v2/totp/${totpSecretKey}`;
+    return `https://api.mailinator.com/api/v2/totp/${totpSecretKey}`;
 };
 
 export class InstantTOTP2FACodeRequest implements Request<InstantTOTP2FACode> {

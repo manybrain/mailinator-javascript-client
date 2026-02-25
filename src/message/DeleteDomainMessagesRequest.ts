@@ -1,11 +1,11 @@
-import {Request} from '../Request';
-import {DeletedMessages} from './DeletedMessages';
-import {IRequestOptions, IRestResponse} from 'typed-rest-client/RestClient';
+import { Request } from '../Request';
+import { DeletedMessages } from './DeletedMessages';
+import { IRequestOptions, IRestResponse } from 'typed-rest-client/RestClient';
 import restClient from '../MailinatorRestClient';
-import {AUTHORIZATION} from "../Constants";
+import { AUTHORIZATION } from "../Constants";
 
 const _resolveTemplateUrl = (domain: string) => {
-    return `https://api.mailinator.com/v2/domains/${domain}/inboxes/`;
+    return `https://api.mailinator.com/api/v2/domains/${domain}/inboxes/`;
 };
 
 export class DeleteDomainMessagesRequest implements Request<DeletedMessages> {
