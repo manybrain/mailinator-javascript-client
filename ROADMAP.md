@@ -5,6 +5,7 @@
 - [x] Add section on how to publish updates to npm to README.md
 - [x] Add depreciation warning to endpoints that exist here and not in the OpenAPI specification.
 - [ ] Add section on building & running tests to README.md
+- [ ] Standardize SDK licensing across repos (uniform `LICENSE` file + package metadata alignment).
 
 Next Minor Release:
 - [ ] Add to the missing endpoints that don't exist here but are in the OpenAPI specification.
