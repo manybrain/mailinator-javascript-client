@@ -7,9 +7,10 @@
     "lib/**/*"
   ],
   "scripts": {
+    "generate:index": "node scripts/generate-barrels.js",
     "test": "jest",
     "coverage": "jest --coverage",
-    "build": "tsc",
+    "build": "npm run generate:index && tsc",
     "prepare": "npm run build",
     "version": "git add -A .",
     "postversion": "git push && git push --tags"
@@ -33,7 +34,6 @@
   "homepage": "https://github.com/manybrain/mailinator-javascript-client",
   "dependencies": {
     "@types/node": "^13.1.8",
-    "create-index": "^2.6.0",
     "typed-rest-client": "^1.7.1"
   },
   "devDependencies": {

@@ -40,8 +40,13 @@ Most of the tests require env variables with valid values. Visit tests source co
 
 #### Create index
 
-* Install https://www.npmjs.com/package/create-ts-index `npm install create-ts-index -g`
-* Run `cti create .`
+Run the in-repo barrel generator:
+
+```bash
+npm run generate:index
+```
+
+This command is also run automatically by `npm run build`.
 
 ## Publishing Changes
 
