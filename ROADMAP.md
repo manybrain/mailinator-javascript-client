@@ -9,6 +9,7 @@
 
 Next Minor Release:
 - [ ] Add to the missing endpoints that don't exist here but are in the OpenAPI specification.
+- [ ] Implement streaming message endpoints (`GET /api/v2/domains/{domain}/stream` and `GET /api/v2/domains/{domain}/stream/{inbox}`).
 
 
 Next Major Release:
