@@ -28,34 +28,24 @@ const { GetInboxRequest, ... } = require('mailinator-client');
 *   `GetInboxMessageLinksRequest(domain, inbox, messageId)`
 *   `DeleteInboxMessagesRequest(domain, inbox)`
 *   `DeleteDomainMessagesRequest(domain)`
-*   `GetLatestInboxMessagesRequest(domain, inbox)`
-*   `GetLatestMessagesRequest(domain)`
+*   `GetLatestInboxMessagesRequest(domain, inbox)` - *Deprecated: This endpoint is not in the OpenAPI spec and currently returns server errors. It will be removed in a future release.*
+*   `GetLatestMessagesRequest(domain)` - *Deprecated: This endpoint is not in the OpenAPI spec and currently returns server errors. It will be removed in a future release.*
 *   `GetSmsInboxRequest(domain, phone)`
-
-## Rule
-**Source:** `src/rule/` - *Note: This doesn't work and all are deprecated. They will be removed in a future release.*
-
-*   `CreateRuleRequest(domainId, rule)`
-*   `GetRulesRequest(domainId)`
-*   `GetRuleRequest(domainId, ruleId)`
-*   `EnableRuleRequest(domainId, ruleId)`
-*   `DisableRuleRequest(domainId, ruleId)`
-*   `DeleteRuleRequest(domainId, ruleId)`
 
 ## Domain
 **Source:** `src/domain/`
 
-*   `CreateDomainRequest(domainId)` - *Note: This doesn't work and is deprecated; it will be removed in a future release.*
-*   `DeleteDomainRequest(domainId)` - *Note: This doesn't work and is deprecated. it will be removed in a future release.**
+*   `CreateDomainRequest(domainId)` - *Deprecated: This endpoint is not in the OpenAPI spec and will be removed in a future release.*
+*   `DeleteDomainRequest(domainId)` - *Deprecated: This endpoint is not in the OpenAPI spec and will be removed in a future release.*
 *   `GetDomainRequest(domainId)`
 *   `GetDomainsRequest()`
 
 ## Authenticator
 **Source:** `src/authenticator/`
 
-*   `GetAuthenticatorsRequest()`
-*   `GetAuthenticatorRequest()`
-*   `GetAuthenticatorByIdRequest(authId)`
+*   `GetAuthenticatorsRequest()` - *Deprecated: This endpoint is not in the OpenAPI spec and will be removed in a future release.*
+*   `GetAuthenticatorRequest()` - *Deprecated: This endpoint is not in the OpenAPI spec and will be removed in a future release.*
+*   `GetAuthenticatorByIdRequest(authId)` - *Deprecated: This endpoint is not in the OpenAPI spec and will be removed in a future release.*
 *   `GetAuthenticatorsByIdRequest(ids)`
 *   `InstantTOTP2FACodeRequest(authenticatorId, secret)`
 
@@ -78,3 +68,19 @@ const { GetInboxRequest, ... } = require('mailinator-client');
 *   `MailinatorClient(apiToken?)`
     *   `request(request)`
     *   `requestWithoutToken(request)`
+
+## Deprecated Methods Summary
+
+*   `GetLatestInboxMessagesRequest(domain, inbox)` - *Not in OpenAPI spec; currently returns server errors; planned for removal.*
+*   `GetLatestMessagesRequest(domain)` - *Not in OpenAPI spec; currently returns server errors; planned for removal.*
+*   `CreateDomainRequest(domainId)` - *Not in OpenAPI spec; planned for removal.*
+*   `DeleteDomainRequest(domainId)` - *Not in OpenAPI spec; planned for removal.*
+*   `GetAuthenticatorsRequest()` - *Not in OpenAPI spec; planned for removal.*
+*   `GetAuthenticatorRequest()` - *Not in OpenAPI spec; planned for removal.*
+*   `GetAuthenticatorByIdRequest(authId)` - *Not in OpenAPI spec; planned for removal.*
+*   `CreateRuleRequest(domainId, rule)` - *Deprecated: Rule endpoints are not in the OpenAPI spec and are planned for removal.*
+*   `GetRulesRequest(domainId)` - *Deprecated: Rule endpoints are not in the OpenAPI spec and are planned for removal.*
+*   `GetRuleRequest(domainId, ruleId)` - *Deprecated: Rule endpoints are not in the OpenAPI spec and are planned for removal.*
+*   `EnableRuleRequest(domainId, ruleId)` - *Deprecated: Rule endpoints are not in the OpenAPI spec and are planned for removal.*
+*   `DisableRuleRequest(domainId, ruleId)` - *Deprecated: Rule endpoints are not in the OpenAPI spec and are planned for removal.*
+*   `DeleteRuleRequest(domainId, ruleId)` - *Deprecated: Rule endpoints are not in the OpenAPI spec and are planned for removal.*

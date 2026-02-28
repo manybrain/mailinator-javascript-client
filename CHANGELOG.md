@@ -14,6 +14,8 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 - Updated `build` to run barrel generation before TypeScript compilation.
 - Updated generated barrel headers to indicate the in-repo generation command.
 - Updated README development instructions for index generation.
+- Marked `GetAuthenticatorRequest`, `GetAuthenticatorByIdRequest`, and `GetAuthenticatorsRequest` with JSDoc `@deprecated` tags because they are not in the current OpenAPI specification.
+- Marked `GetLatestMessagesRequest` and `GetLatestInboxMessagesRequest` with JSDoc `@deprecated` tags because they are not in the current OpenAPI specification and currently return server errors.
 
 ## [1.0.9] - 2026-02-24
 

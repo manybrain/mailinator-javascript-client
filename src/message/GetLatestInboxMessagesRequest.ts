@@ -11,6 +11,7 @@ const _resolveTemplateUrl = (domain: string, inbox: string | undefined) => {
     return `https://api.mailinator.com/api/v2/domains/${domain}/inboxes/${inbox}/messages/*`;
 };
 
+/** @deprecated This endpoint is not in the OpenAPI spec and currently returns server errors. It will be removed in a future release. */
 export class GetLatestInboxMessagesRequest implements Request<Inbox> {
 
     constructor(private readonly domain: string,
