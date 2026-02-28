@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a Changelog, and this project adheres to Semantic Versioning.
 
-## [Unreleased]
+## [1.0.10]
 
 ### Fixed
 - Added missing barrel export for `GetTeamInfoRequest` in `src/stats/index.ts`, so it is available from root package imports.
