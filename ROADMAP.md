@@ -8,7 +8,7 @@
 - [ ] Standardize SDK licensing across repos (uniform `LICENSE` file + package metadata alignment).
 
 Next Minor Release(s):
-- [ ] Update `GetSmsInboxRequest` to support all inbox-list query parameters from the OpenAPI spec (`skip`, `limit`, `sort`, `decode_subject`, `cursor`, `full`, `wait`, `delete`).
+- [x] Update `GetSmsInboxRequest` to support all inbox-list query parameters from the OpenAPI spec (`skip`, `limit`, `sort`, `decode_subject`, `cursor`, `full`, `wait`, `delete`).
 - [ ] Implement `getMessageSummary` (`GET /api/v2/domains/{domain}/messages/{messageId}/summary`).
 - [ ] Implement `getMessageText` (`GET /api/v2/domains/{domain}/messages/{messageId}/text`).
 - [ ] Implement `getMessageTextPlain` (`GET /api/v2/domains/{domain}/messages/{messageId}/textplain`).

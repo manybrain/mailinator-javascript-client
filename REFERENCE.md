@@ -30,7 +30,7 @@ const { GetInboxRequest, ... } = require('mailinator-client');
 *   `DeleteDomainMessagesRequest(domain)`
 *   `GetLatestInboxMessagesRequest(domain, inbox)` - *Deprecated: This endpoint is not in the OpenAPI spec and currently returns server errors. It will be removed in a future release.*
 *   `GetLatestMessagesRequest(domain)` - *Deprecated: This endpoint is not in the OpenAPI spec and currently returns server errors. It will be removed in a future release.*
-*   `GetSmsInboxRequest(domain, phone)`
+*   `GetSmsInboxRequest(domain, phone, skip?, limit?, sort?, decodeSubject?, cursor?, full?, delete?, wait?)`
 
 ## Domain
 **Source:** `src/domain/`

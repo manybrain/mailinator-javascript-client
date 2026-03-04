@@ -17,6 +17,7 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 - Marked `GetAuthenticatorRequest`, `GetAuthenticatorByIdRequest`, and `GetAuthenticatorsRequest` with JSDoc `@deprecated` tags because they are not in the current OpenAPI specification.
 - Marked `GetLatestMessagesRequest` and `GetLatestInboxMessagesRequest` with JSDoc `@deprecated` tags because they are not in the current OpenAPI specification and currently return server errors.
 - Planned npm registry deprecation for `mailinator-client@<=1.0.4` with an upgrade warning message; command execution is pending network-approved run.
+- Added full inbox-list query parameter support to `GetSmsInboxRequest` (`skip`, `limit`, `sort`, `decode_subject`, `cursor`, `full`, `wait`, `delete`) to align with the OpenAPI contract.
 
 ## [1.0.9] - 2026-02-24
 
