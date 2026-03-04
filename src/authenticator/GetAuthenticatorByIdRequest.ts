@@ -8,6 +8,7 @@ const _resolveTemplateUrl = (authId: string) => {
     return `https://api.mailinator.com/api/v2/authenticator/${authId}`;
 };
 
+/** @deprecated This endpoint is not in the OpenAPI spec and will be removed in a future release. */
 export class GetAuthenticatorByIdRequest implements Request<Authenticator> {
 
     constructor(private readonly authId: string) {

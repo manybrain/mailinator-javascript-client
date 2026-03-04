@@ -8,6 +8,7 @@ const _resolveTemplateUrl = () => {
     return `https://api.mailinator.com/api/v2/authenticator/`;
 };
 
+/** @deprecated This endpoint is not in the OpenAPI spec and will be removed in a future release. */
 export class GetAuthenticatorRequest implements Request<Authenticators> {
 
     constructor() {

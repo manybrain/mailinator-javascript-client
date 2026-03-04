@@ -1,12 +1,12 @@
 # Mailinator JavaScript SDK
 
-The official Mailinator JavaScript SDK. This REST API client is implemented as a thin wrapper around the [Mailinator API](https://www.mailinator.com/documentation/docs/api/). The OpenAPI specification will be the source of truth for this client.
+The official Mailinator JavaScript SDK. This REST API client is implemented as a thin wrapper around the [Mailinator API](https://www.mailinator.com/documentation/docs/api/index.html). The OpenAPI specification is the source of truth for this client.
 
 Uses [Microsoft's typed-rest-client](https://github.com/microsoft/typed-rest-client). All requests are async functions.
 
 ## API Reference
 
-See [Mailinator's API Reference](https://www.mailinator.com/documentation/docs/api/) for all of the currently available API endpoints.
+See [Mailinator's API Reference](https://www.mailinator.com/documentation/docs/api/index.html) for all of the currently available API endpoints.
 
 ## Request Classes and Deprecations
 
@@ -40,8 +40,13 @@ Most of the tests require env variables with valid values. Visit tests source co
 
 #### Create index
 
-* Install https://www.npmjs.com/package/create-ts-index `npm install create-ts-index -g`
-* Run `cti create .`
+Run the in-repo barrel generator:
+
+```bash
+npm run generate:index
+```
+
+This command is also run automatically by `npm run build`.
 
 ## Publishing Changes
 
