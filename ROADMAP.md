@@ -16,7 +16,8 @@ Next Minor Release(s):
 - [ ] Implement `getMessageHeaders` (`GET /api/v2/domains/{domain}/messages/{messageId}/headers`).
 - [ ] Implement `streamDomainMessages` (`GET /api/v2/domains/{domain}/stream`).
 - [ ] Implement `streamInboxMessages` (`GET /api/v2/domains/{domain}/stream/{inbox}`).
-- [ ] Implement `listDomainMessages` (`GET /api/v2/domains/{domain}/inboxes`). ** double check**
+- [ ] Implement `listDomainMessages` (`GET /api/v2/domains/{domain}/inboxes`).
+  Note: `GetInboxRequest` currently targets `/api/v2/domains/{domain}/inboxes/{inbox}` and falls back to `/inboxes/` when `inbox` is omitted, which is not an exact match for the spec path `/inboxes`. Add a dedicated request class for `listDomainMessages`.
 
 
 Next Major Release:
