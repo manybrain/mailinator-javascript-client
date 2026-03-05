@@ -10,7 +10,7 @@
     "generate:index": "node scripts/generate-barrels.js",
     "test": "jest",
     "coverage": "jest --coverage",
-    "build": "npm run generate:index && tsc",
+    "build": "npm run generate:index && tsc && node scripts/sync-lib-layout.js",
     "prepare": "npm run build",
     "version": "git add -A .",
     "postversion": "git push && git push --tags"
