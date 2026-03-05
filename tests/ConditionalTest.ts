@@ -11,9 +11,8 @@ export class EnabledIfEnvironmentVariable implements TestCondition {
     }
 
     check: () => boolean = () => {
-        return true;
-        //const envValue = process.env[this.named];
-        //return (envValue !== undefined) && (RegExp(this.matches).test(envValue));
+        const envValue = process.env[this.named];
+        return (envValue !== undefined) && (RegExp(this.matches).test(envValue));
     }
 }
 
