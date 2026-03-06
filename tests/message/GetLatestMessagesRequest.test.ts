@@ -11,7 +11,8 @@ import {
 } from "../TestEnv";
 import {EnabledIfEnvironmentVariable, EnabledIfEnvironmentVariables, itIf} from "../ConditionalTest";
 
-describe('GetLatestMessagesRequest Tests', function () {
+// Tests are skipped. There was never a GetLatestMessages endpoint
+describe.skip('GetLatestMessagesRequest Tests', function () {
 
     itIf(
         new EnabledIfEnvironmentVariables(
