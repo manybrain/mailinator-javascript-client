@@ -11,6 +11,7 @@ export const ENV_AUTH_SECRET: string = "MAILINATOR_TEST_AUTH_SECRET";
 export const ENV_AUTH_ID: string = "MAILINATOR_TEST_AUTH_ID";
 export const ENV_WEBHOOK_INBOX: string = "MAILINATOR_TEST_WEBHOOK_INBOX";
 export const ENV_WEBHOOK_CUSTOMSERVICE: string = "MAILINATOR_TEST_WEBHOOK_CUSTOMSERVICE";
+export const ENV_REAL_MESSAGE_ID: string = "MAILINATOR_TEST_REAL_MESSAGE_ID";
 
 let apiToken: string;
 let phoneNumber: string;
@@ -25,6 +26,7 @@ let authSecret: string;
 let authId: string;
 let webhookInbox: string;
 let webhookCustomService: string;
+let realMessageId: string;
 
 export const getApiToken = () => {
     if (apiToken === undefined) {
@@ -167,4 +169,15 @@ export const getWebhookCustomService = () => {
         webhookCustomService = val;
     }
     return webhookCustomService;
+};
+
+export const getRealMessageId = () => {
+    if (realMessageId === undefined) {
+        const val = process.env[ENV_REAL_MESSAGE_ID] ?? ENV_REAL_MESSAGE_ID;
+        if (val === undefined) {
+            throw new Error(`env variable ${ENV_REAL_MESSAGE_ID} not declared`);
+        }
+        realMessageId = val;
+    }
+    return realMessageId;
 };

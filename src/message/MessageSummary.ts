@@ -1,6 +1,7 @@
 export class MessageSummary {
     id: string;
     subject: string;
+    domain: string;
     from: string;
     origfrom: string;
     to: string;

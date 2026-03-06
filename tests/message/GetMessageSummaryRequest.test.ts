@@ -1,13 +1,10 @@
-import { postMessage } from '../TestUtils';
 import { GetMessageSummaryRequest } from '../../src/message/GetMessageSummaryRequest';
 import {
     ENV_API_TOKEN,
-    ENV_DOMAIN_PRIVATE,
-    ENV_INBOX_TEST,
     getApiToken,
-    getInboxTest,
-    getPrivateDomain
+    ENV_REAL_MESSAGE_ID
 } from '../TestEnv';
+import { getRealMessageId } from '../TestEnv';
 import { EnabledIfEnvironmentVariable, EnabledIfEnvironmentVariables, itIf } from '../ConditionalTest';
 
 describe('GetMessageSummaryRequest Tests', function () {
@@ -15,23 +12,21 @@ describe('GetMessageSummaryRequest Tests', function () {
     itIf(
         new EnabledIfEnvironmentVariables(
             new EnabledIfEnvironmentVariable(ENV_API_TOKEN, "[^\\s]+"),
-            new EnabledIfEnvironmentVariable(ENV_DOMAIN_PRIVATE, "[^\\s]+"),
-            new EnabledIfEnvironmentVariable(ENV_INBOX_TEST, "[^\\s]+")
+            new EnabledIfEnvironmentVariable(ENV_REAL_MESSAGE_ID, "[^\\s]+")
         )
     )('testGetMessageSummaryRequest', async () => {
 
-        const domain = getPrivateDomain();
-        const inbox = getInboxTest();
-        const message = await postMessage(domain, inbox);
+        const domain = 'private';
+        const messageId = getRealMessageId();
 
-        const request = new GetMessageSummaryRequest(domain, message!.result!.id);
+        const request = new GetMessageSummaryRequest(domain, messageId);
         const response = await request.execute(getApiToken());
 
         expect(response.statusCode).toBe(200);
         const result = response.result;
         expect(result).toBeTruthy();
-        expect(result!.id).toBe(message!.result!.id);
-        expect(result!.to).toBe(getInboxTest());
-        expect(result!.subject).toBeTruthy();
+        expect(result!.summary).toBeTruthy();
+        expect(result!.summary.id).toBe(messageId);
+        expect(result!.summary.subject).toBeTruthy();
     });
 });

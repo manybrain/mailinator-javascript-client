@@ -31,6 +31,7 @@ export * from './Links';
 export * from './LinksFull';
 export * from './Message';
 export * from './MessageSummary';
+export * from './MessageSummaryResponse';
 export * from './MessageToPost';
 export * from './Part';
 export * from './PostedMessage';
