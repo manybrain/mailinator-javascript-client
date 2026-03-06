@@ -172,7 +172,7 @@ describe('GetInboxRequest Tests', function () {
         )
     )('testInboxRequestWithPrivateDomainWithWaitQueryParams', async () => {
 
-        const request = new GetInboxRequest(getPrivateDomain(), undefined, undefined, 1, undefined, undefined, undefined, undefined, undefined, "1m");
+        const request = new GetInboxRequest(getPrivateDomain(), undefined, undefined, 1, undefined, undefined, undefined, undefined, undefined, "1s");
 
         const response: IRestResponse<Inbox> = await request.execute(getApiToken());
 
