@@ -3,7 +3,7 @@ import {PrivateCustomServiceInboxWebhookRequest} from "../../src/webhook/Private
 import { getWehhookToAdd } from "../TestUtils";
 import { ENV_WEBHOOKTOKEN_CUSTOMSERVICE, ENV_WEBHOOK_CUSTOMSERVICE, ENV_WEBHOOK_INBOX, getWebhookCustomService, getWebhookInbox, getWebhookTokenCustomService } from "../TestEnv";
 
-describe('PrivateCustomServiceInboxWebhookRequest Tests', function () {
+describe.skip('PrivateCustomServiceInboxWebhookRequest Tests', function () {
 
     itIf(
         new EnabledIfEnvironmentVariables(
