@@ -23,6 +23,7 @@ This client uses a **Request Object** pattern. Specific API operations are encap
 -   **Mapping:** Each Request class typically maps to a single Operation ID in the OpenAPI spec.
     -   Example: `GetInboxRequest.ts` maps to the `listInboxMessages` operation (GET `/api/v2/domains/{domain}/inboxes/{inbox}`).
     -   Example: `PostMessageRequest.ts` maps to the `postMessage` operation (POST `/api/v2/domains/{domain}/inboxes/{inbox}`).
+    -   Note: When `GetInboxRequest` is called without an `inbox`, it now uses a wildcard inbox (`*`) and resolves to `/api/v2/domains/{domain}/inboxes/*`.
 
 ## Execution
 

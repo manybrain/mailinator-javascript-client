@@ -13,6 +13,9 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 - Implemented `GetMessageSummaryRequest` SDK response modeling to align with the `{ summary: ... }` payload shape, adding a wrapper response type.
 - Implemented `GetMessageTextRequest` plus `MessageTextResponse` to support `GET /api/v2/domains/{domain}/messages/{messageId}/text`.
 - Implemented `GetMessageTextPlainRequest` to support `GET /api/v2/domains/{domain}/messages/{messageId}/textplain`.
+- Implemented `GetMessageTextHtmlRequest` to support `GET /api/v2/domains/{domain}/messages/{messageId}/texthtml`.
+- Implemented `GetMessageHeadersRequest` to support `GET /api/v2/domains/{domain}/messages/{messageId}/headers`.
+- Updated `GetInboxRequest` to use `*` when `inbox` is omitted, resolving to `/api/v2/domains/{domain}/inboxes/*`.
 
 
 ### Fixed
