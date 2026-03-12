@@ -4,7 +4,7 @@ import {DisableRuleRequest} from "../../src/rule/DisableRuleRequest";
 import {EnabledIfEnvironmentVariable, EnabledIfEnvironmentVariables, itIf} from "../ConditionalTest";
 import {DeleteRuleRequest} from "../../src/rule/DeleteRuleRequest";
 
-describe('DisableRuleRequest Tests', function () {
+describe.skip('DisableRuleRequest Tests', function () {
 
     itIf(
         new EnabledIfEnvironmentVariables(

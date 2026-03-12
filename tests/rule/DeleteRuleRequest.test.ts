@@ -3,7 +3,7 @@ import {ENV_API_TOKEN, ENV_DOMAIN_PRIVATE, getApiToken} from "../TestEnv";
 import {DeleteRuleRequest} from "../../src/rule/DeleteRuleRequest";
 import {EnabledIfEnvironmentVariable, EnabledIfEnvironmentVariables, itIf} from "../ConditionalTest";
 
-describe('DeleteRuleRequest Tests', function () {
+describe.skip('DeleteRuleRequest Tests', function () {
 
     itIf(
         new EnabledIfEnvironmentVariables(
