@@ -2,7 +2,7 @@
 
 This document explains the relationship between this Javascript client and the Mailinator OpenAPI specification.
 
-**OpenAPI Specification:** [https://github.com/manybrain/mailinatordocs/blob/main/openapi/mailinator-api.yaml](https://github.com/manybrain/mailinatordocs/blob/main/openapi/mailinator-api.yaml)
+**OpenAPI Specification:** [Found on GitHub](https://github.com/manybrain/mailinatordocs/blob/main/openapi/mailinator-api.yaml)
 
 ## Codebase Structure
 
@@ -63,7 +63,7 @@ Extract every `paths` entry. For each path, record:
 - The tag (maps to the SDK module directory)
 - All query parameters defined under `parameters`
 
-### Step 2 — Catalogue the SDK
+### Step 2 — Catalog the SDK
 
 For each `*Request.ts` file under `src/`:
 1. Identify the HTTP method used (`restClient.get`, `.create`, `.replace`, `.del`).
@@ -173,3 +173,11 @@ After implementing:
 | No-token requests | Implement `RequestWithoutToken` (used for webhook injection). |
 | Deprecated marker | Add `/** @deprecated ... */` JSDoc above the class declaration. |
 | Module exports | Every new class must be added to the module's `index.ts` and to `src/index.ts`. |
+
+### Test Expectations
+
+- Integration tests should exercise real HTTP requests to Mailinator endpoints. Do not use request-mocking tools for endpoint coverage tests.
+- Assertions must validate response semantics, not just existence. Prefer checking:
+  - expected HTTP success behavior (or explicit failure with returned status code),
+  - expected JSON shape (required keys),
+  - important field-level values (for example, IDs or arrays) relevant to the endpoint contract.
