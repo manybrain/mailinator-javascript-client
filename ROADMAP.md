@@ -9,9 +9,10 @@
 
 Next Minor Release(s):
 - [x] Update `GetSmsInboxRequest` to support all inbox-list query parameters from the OpenAPI spec (`skip`, `limit`, `sort`, `decode_subject`, `cursor`, `full`, `wait`, `delete`).
-- [ ] Implement `getMessageSummary` (`GET /api/v2/domains/{domain}/messages/{messageId}/summary`).
-- [ ] Implement `getMessageText` (`GET /api/v2/domains/{domain}/messages/{messageId}/text`).
-- [ ] Implement `getMessageTextPlain` (`GET /api/v2/domains/{domain}/messages/{messageId}/textplain`).
+- [x] Implement `getMessageSummary` (`GET /api/v2/domains/{domain}/messages/{messageId}/summary`).
+- [x] Stabilize attachment download tests by deriving attachment IDs from the attachment list.
+- [x] Implement `getMessageText` (`GET /api/v2/domains/{domain}/messages/{messageId}/text`).
+- [x] Implement `getMessageTextPlain` (`GET /api/v2/domains/{domain}/messages/{messageId}/textplain`).
 - [ ] Implement `getMessageTextHtml` (`GET /api/v2/domains/{domain}/messages/{messageId}/texthtml`).
 - [ ] Implement `getMessageHeaders` (`GET /api/v2/domains/{domain}/messages/{messageId}/headers`).
 - [ ] Implement `streamDomainMessages` (`GET /api/v2/domains/{domain}/stream`).

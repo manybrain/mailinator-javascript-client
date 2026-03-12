@@ -13,12 +13,16 @@ import {
 import {EnabledIfEnvironmentVariable, EnabledIfEnvironmentVariables, itIf} from "../ConditionalTest";
 
 const getAttachmentIdFromList = (attachment: Record<string, unknown>) => {
-    return (
-        attachment['attachment-id'] ||
-        attachment['attachmentId'] ||
-        attachment['attachment_id'] ||
-        attachment['id']
-    );
+    if (attachment['attachment-id'] !== undefined) {
+        return attachment['attachment-id'];
+    }
+    if (attachment['attachmentId'] !== undefined) {
+        return attachment['attachmentId'];
+    }
+    if (attachment['attachment_id'] !== undefined) {
+        return attachment['attachment_id'];
+    }
+    return attachment['id'];
 };
 
 describe('GetMessageAttachmentRequest Tests', function () {
@@ -41,7 +45,8 @@ describe('GetMessageAttachmentRequest Tests', function () {
         expect(attachments.length).toBeGreaterThanOrEqual(1);
 
         const attachmentId = getAttachmentIdFromList(attachments[0] as unknown as Record<string, unknown>);
-        expect(attachmentId).toBeTruthy();
+        expect(attachmentId).not.toBeUndefined();
+        expect(attachmentId).not.toBeNull();
 
         const request = new GetMessageAttachmentRequest(getPrivateDomain(), getMessageWithAttachmentId(), attachmentId as number);
         const response = await request.execute(getApiToken());

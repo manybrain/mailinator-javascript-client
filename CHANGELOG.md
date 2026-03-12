@@ -6,14 +6,19 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 
 ## [1.1.0] - 2026-03-05
 
+### Changed
+- Added `.env` loading for Jest to simplify integration test setup.
+- Added `MAILINATOR_TEST_REAL_MESSAGE_ID` for summary endpoint integration testing.
+- Lots of test updates.
+- Implemented `GetMessageSummaryRequest` SDK response modeling to align with the `{ summary: ... }` payload shape, adding a wrapper response type.
+- Implemented `GetMessageTextRequest` plus `MessageTextResponse` to support `GET /api/v2/domains/{domain}/messages/{messageId}/text`.
+- Implemented `GetMessageTextPlainRequest` to support `GET /api/v2/domains/{domain}/messages/{messageId}/textplain`.
+
+
 ### Fixed
 - Fixed package build output synchronization so generated artifacts in `lib/` are always refreshed from the latest TypeScript compile output.
 - Fixed `GetTeamInfoRequest` package exports so both `lib/stats/index.js` and `lib/stats/index.d.ts` re-export it, enabling non-deep imports.
-- Updated `GetMessageSummaryRequest` SDK response modeling to align with the `{ summary: ... }` payload shape.
 
-### Changed
-- Added `.env` loading for Jest to simplify integration test setup.
-- Lots of test updates.
 
 ## [1.0.10] - 2026-03-04
 

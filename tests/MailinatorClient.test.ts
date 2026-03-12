@@ -66,8 +66,15 @@ describe('MailinatorClient Tests', function () {
         expect(Array.isArray(attachments)).toBe(true);
         expect(attachments.length).toBeGreaterThanOrEqual(1);
         const attachment = attachments[0] as unknown as Record<string, unknown>;
-        const attachmentId = attachment['attachment-id'] || attachment['attachmentId'] || attachment['attachment_id'] || attachment['id'];
-        expect(attachmentId).toBeTruthy();
+        const attachmentId = attachment['attachment-id'] !== undefined
+            ? attachment['attachment-id']
+            : attachment['attachmentId'] !== undefined
+                ? attachment['attachmentId']
+                : attachment['attachment_id'] !== undefined
+                    ? attachment['attachment_id']
+                    : attachment['id'];
+        expect(attachmentId).not.toBeUndefined();
+        expect(attachmentId).not.toBeNull();
 
         const response: IRestResponse<IncomingMessage> = await mailinatorClient.request(
             new GetInboxMessageAttachmentRequest(
