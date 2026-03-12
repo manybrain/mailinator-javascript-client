@@ -9,6 +9,11 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 ### Fixed
 - Fixed package build output synchronization so generated artifacts in `lib/` are always refreshed from the latest TypeScript compile output.
 - Fixed `GetTeamInfoRequest` package exports so both `lib/stats/index.js` and `lib/stats/index.d.ts` re-export it, enabling non-deep imports.
+- Updated `GetMessageSummaryRequest` SDK response modeling to align with the `{ summary: ... }` payload shape.
+
+### Changed
+- Added `.env` loading for Jest to simplify integration test setup.
+- Lots of test updates.
 
 ## [1.0.10] - 2026-03-04
 
