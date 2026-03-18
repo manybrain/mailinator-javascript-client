@@ -29,6 +29,7 @@ export * from './GetMessageTextHtmlRequest';
 export * from './GetMessageTextPlainRequest';
 export * from './GetMessageTextRequest';
 export * from './GetSmsInboxRequest';
+export * from './GetStreamDomainMessagesRequest';
 export * from './Inbox';
 export * from './LinkEntity';
 export * from './Links';
