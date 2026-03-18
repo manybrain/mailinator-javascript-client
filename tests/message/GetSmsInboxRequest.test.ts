@@ -1,7 +1,6 @@
+import {GetSmsInboxRequest, Inbox} from '../../src/message';
+import {DomainType} from '../../src/domain';
 import {IRestResponse} from 'typed-rest-client/RestClient';
-import {Inbox} from '../../src/message/Inbox';
-import {GetSmsInboxRequest} from '../../src/message/GetSmsInboxRequest';
-import {DomainType} from '../../src/domain/DomainType';
 import {ENV_API_TOKEN, ENV_PHONE_NUMBER, getApiToken, getPhoneNumber} from "../TestEnv";
 import {EnabledIfEnvironmentVariable, EnabledIfEnvironmentVariables, itIf} from "../ConditionalTest";
 

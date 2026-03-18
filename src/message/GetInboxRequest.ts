@@ -7,7 +7,7 @@ import { AUTHORIZATION } from '../Constants';
 
 const _resolveTemplateUrl = (domain: string, inbox: string | undefined) => {
     if (inbox === undefined) {
-        inbox = '';
+        inbox = '*';
     }
     return `https://api.mailinator.com/api/v2/domains/${domain}/inboxes/${inbox}`;
 };

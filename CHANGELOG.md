@@ -4,7 +4,28 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a Changelog, and this project adheres to Semantic Versioning.
 
-## [1.0.10]
+## [1.1.0] - 2026-03-05
+
+### Changed
+- Implemented `.env` loading for Jest to simplify integration test setup.
+- Implemented `MAILINATOR_TEST_REAL_MESSAGE_ID` for summary endpoint integration testing.
+- Lots of test updates.
+- Implemented `GetMessageSummaryRequest` SDK response modeling to align with the `{ summary: ... }` payload shape, adding a wrapper response type.
+- Implemented `GetMessageTextRequest` plus `MessageTextResponse` to support `GET /api/v2/domains/{domain}/messages/{messageId}/text`.
+- Implemented `GetMessageTextPlainRequest` to support `GET /api/v2/domains/{domain}/messages/{messageId}/textplain`.
+- Implemented `GetMessageTextHtmlRequest` to support `GET /api/v2/domains/{domain}/messages/{messageId}/texthtml`.
+- Implemented `GetMessageHeadersRequest` to support `GET /api/v2/domains/{domain}/messages/{messageId}/headers`.
+- Implemented `GetStreamDomainMessagesRequest` to support `GET /api/v2/domains/{domain}/stream`.
+- Implemented `GetStreamInboxMessagesRequest` to support `GET /api/v2/domains/{domain}/stream/{inbox}`.
+- Updated `GetInboxRequest` to use `*` when `inbox` is omitted, resolving to `/api/v2/domains/{domain}/inboxes/*`.
+
+
+### Fixed
+- Fixed package build output synchronization so generated artifacts in `lib/` are always refreshed from the latest TypeScript compile output.
+- Fixed `GetTeamInfoRequest` package exports so both `lib/stats/index.js` and `lib/stats/index.d.ts` re-export it, enabling non-deep imports.
+
+
+## [1.0.10] - 2026-03-04
 
 ### Fixed
 - Added missing barrel export for `GetTeamInfoRequest` in `src/stats/index.ts`, so it is available from root package imports.

@@ -1,4 +1,4 @@
-import {GetMessageAttachmentsRequest} from '../../src/message/GetMessageAttachmentsRequest';
+import {GetMessageAttachmentsRequest} from '../../src/message';
 import {postMessage} from "../TestUtils";
 import {
     ENV_API_TOKEN,

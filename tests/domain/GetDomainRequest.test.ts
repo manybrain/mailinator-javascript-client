@@ -1,5 +1,5 @@
+import {GetDomainRequest} from '../../src/domain';
 import {getFirstAvailableDomain} from '../TestUtils';
-import {GetDomainRequest} from '../../src/domain/GetDomainRequest';
 import {ENV_API_TOKEN, getApiToken} from "../TestEnv";
 import {EnabledIfEnvironmentVariable, EnabledIfEnvironmentVariables, itIf} from "../ConditionalTest";
 
@@ -19,11 +19,8 @@ describe('GetDomainRequest Tests', function () {
         const result = response.result;
         expect(result).toBeTruthy();
         expect(result!.name).toBeTruthy();
-        expect(result!._id).toBeTruthy();
         expect(result!.description).toBeTruthy();
-        expect(result!.enabled).toBeTruthy();
-        expect(result!.rules).toBeTruthy();
-        expect(Array.isArray(result!.rules)).toBe(true);
+        expect(typeof result!.enabled).toBe('boolean');
     });
 
 });

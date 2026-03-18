@@ -11,6 +11,7 @@ export const ENV_AUTH_SECRET: string = "MAILINATOR_TEST_AUTH_SECRET";
 export const ENV_AUTH_ID: string = "MAILINATOR_TEST_AUTH_ID";
 export const ENV_WEBHOOK_INBOX: string = "MAILINATOR_TEST_WEBHOOK_INBOX";
 export const ENV_WEBHOOK_CUSTOMSERVICE: string = "MAILINATOR_TEST_WEBHOOK_CUSTOMSERVICE";
+export const ENV_REAL_MESSAGE_ID: string = "MAILINATOR_TEST_REAL_MESSAGE_ID";
 
 let apiToken: string;
 let phoneNumber: string;
@@ -25,10 +26,11 @@ let authSecret: string;
 let authId: string;
 let webhookInbox: string;
 let webhookCustomService: string;
+let realMessageId: string;
 
 export const getApiToken = () => {
     if (apiToken === undefined) {
-        const val = process.env[ENV_API_TOKEN] ?? ENV_API_TOKEN;
+        const val = process.env[ENV_API_TOKEN];
         if (val === undefined) {
             throw new Error(`env variable ${ENV_API_TOKEN} not declared`);
         }
@@ -39,7 +41,7 @@ export const getApiToken = () => {
 
 export const getPrivateDomain = () => {
     if (privateDomain === undefined) {
-        const val = process.env[ENV_DOMAIN_PRIVATE] ?? ENV_DOMAIN_PRIVATE;
+        const val = process.env[ENV_DOMAIN_PRIVATE];
         if (val === undefined) {
             throw new Error(`env variable ${ENV_DOMAIN_PRIVATE} not declared`);
         }
@@ -50,7 +52,7 @@ export const getPrivateDomain = () => {
 
 export const getDeleteDomain = () => {
     if (deleteDomain === undefined) {
-        const val = process.env[ENV_DELETE_DOMAIN] ?? ENV_DELETE_DOMAIN;
+        const val = process.env[ENV_DELETE_DOMAIN];
         if (val === undefined) {
             throw new Error(`env variable ${ENV_DELETE_DOMAIN} not declared`);
         }
@@ -61,7 +63,7 @@ export const getDeleteDomain = () => {
 
 export const getInboxTest = () => {
     if (inboxTest === undefined) {
-        const val = process.env[ENV_INBOX_TEST] ?? ENV_INBOX_TEST;
+        const val = process.env[ENV_INBOX_TEST];
         if (val === undefined) {
             throw new Error(`env variable ${ENV_INBOX_TEST} not declared`);
         }
@@ -72,7 +74,7 @@ export const getInboxTest = () => {
 
 export const getPhoneNumber = () => {
     if (phoneNumber === undefined) {
-        const val = process.env[ENV_PHONE_NUMBER] ?? ENV_PHONE_NUMBER;
+        const val = process.env[ENV_PHONE_NUMBER];
         if (val === undefined) {
             throw new Error(`env variable ${ENV_PHONE_NUMBER} not declared`);
         }
@@ -83,7 +85,7 @@ export const getPhoneNumber = () => {
 
 export const getMessageWithAttachmentId = () => {
     if (messageWithAttachmentId === undefined) {
-        const val = process.env[ENV_MESSAGE_WITH_ATTACHMENT_ID] ?? ENV_MESSAGE_WITH_ATTACHMENT_ID;
+        const val = process.env[ENV_MESSAGE_WITH_ATTACHMENT_ID];
         if (val === undefined) {
             throw new Error(`env variable ${ENV_MESSAGE_WITH_ATTACHMENT_ID} not declared`);
         }
@@ -94,7 +96,7 @@ export const getMessageWithAttachmentId = () => {
 
 export const getAttachmentId = () => {
     if (attachmentId === undefined) {
-        const val = process.env[ENV_ATTACHMENT_ID] ?? ENV_ATTACHMENT_ID;
+        const val = process.env[ENV_ATTACHMENT_ID];
         if (val === undefined) {
             throw new Error(`env variable ${ENV_ATTACHMENT_ID} not declared`);
         }
@@ -105,7 +107,7 @@ export const getAttachmentId = () => {
 
 export const getWebhookTokenCustomService = () => {
     if (webhookTokenCustomService === undefined) {
-        const val = process.env[ENV_WEBHOOKTOKEN_CUSTOMSERVICE] ?? ENV_WEBHOOKTOKEN_CUSTOMSERVICE;
+        const val = process.env[ENV_WEBHOOKTOKEN_CUSTOMSERVICE];
         if (val === undefined) {
             throw new Error(`env variable ${ENV_WEBHOOKTOKEN_CUSTOMSERVICE} not declared`);
         }
@@ -116,7 +118,7 @@ export const getWebhookTokenCustomService = () => {
 
 export const getWebhookTokenPrivateDomain = () => {
     if (webhookTokenPrivateDomain === undefined) {
-        const val = process.env[ENV_WEBHOOKTOKEN_PRIVATEDOMAIN] ?? ENV_WEBHOOKTOKEN_PRIVATEDOMAIN;
+        const val = process.env[ENV_WEBHOOKTOKEN_PRIVATEDOMAIN];
         if (val === undefined) {
             throw new Error(`env variable ${ENV_WEBHOOKTOKEN_PRIVATEDOMAIN} not declared`);
         }
@@ -127,7 +129,7 @@ export const getWebhookTokenPrivateDomain = () => {
 
 export const getAuthSecret = () => {
     if (authSecret === undefined) {
-        const val = process.env[ENV_AUTH_SECRET] ?? ENV_AUTH_SECRET;
+        const val = process.env[ENV_AUTH_SECRET];
         if (val === undefined) {
             throw new Error(`env variable ${ENV_AUTH_SECRET} not declared`);
         }
@@ -138,7 +140,7 @@ export const getAuthSecret = () => {
 
 export const getAuthId = () => {
     if (authId === undefined) {
-        const val = process.env[ENV_AUTH_ID] ?? ENV_AUTH_ID;
+        const val = process.env[ENV_AUTH_ID];
         if (val === undefined) {
             throw new Error(`env variable ${ENV_AUTH_ID} not declared`);
         }
@@ -149,7 +151,7 @@ export const getAuthId = () => {
 
 export const getWebhookInbox = () => {
     if (webhookInbox === undefined) {
-        const val = process.env[ENV_WEBHOOK_INBOX] ?? ENV_WEBHOOK_INBOX;
+        const val = process.env[ENV_WEBHOOK_INBOX];
         if (val === undefined) {
             throw new Error(`env variable ${ENV_WEBHOOK_INBOX} not declared`);
         }
@@ -160,11 +162,22 @@ export const getWebhookInbox = () => {
 
 export const getWebhookCustomService = () => {
     if (webhookCustomService === undefined) {
-        const val = process.env[ENV_WEBHOOK_CUSTOMSERVICE] ?? ENV_WEBHOOK_CUSTOMSERVICE;
+        const val = process.env[ENV_WEBHOOK_CUSTOMSERVICE];
         if (val === undefined) {
             throw new Error(`env variable ${ENV_WEBHOOK_CUSTOMSERVICE} not declared`);
         }
         webhookCustomService = val;
     }
     return webhookCustomService;
+};
+
+export const getRealMessageId = () => {
+    if (realMessageId === undefined) {
+        const val = process.env[ENV_REAL_MESSAGE_ID];
+        if (val === undefined) {
+            throw new Error(`env variable ${ENV_REAL_MESSAGE_ID} not declared`);
+        }
+        realMessageId = val;
+    }
+    return realMessageId;
 };

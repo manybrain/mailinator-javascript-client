@@ -1,8 +1,6 @@
-import {GetInboxRequest} from '../../src/message/GetInboxRequest';
+import {GetInboxRequest, Inbox, Sort} from '../../src/message';
+import {DomainType} from '../../src/domain';
 import {IRestResponse} from 'typed-rest-client/RestClient';
-import {Inbox} from '../../src/message/Inbox';
-import {DomainType} from '../../src/domain/DomainType';
-import {Sort} from '../../src/message/Sort';
 import {
     ENV_API_TOKEN,
     ENV_DOMAIN_PRIVATE,
@@ -172,7 +170,7 @@ describe('GetInboxRequest Tests', function () {
         )
     )('testInboxRequestWithPrivateDomainWithWaitQueryParams', async () => {
 
-        const request = new GetInboxRequest(getPrivateDomain(), undefined, undefined, 1, undefined, undefined, undefined, undefined, undefined, "1m");
+        const request = new GetInboxRequest(getPrivateDomain(), undefined, undefined, 1, undefined, undefined, undefined, undefined, undefined, "1s");
 
         const response: IRestResponse<Inbox> = await request.execute(getApiToken());
 

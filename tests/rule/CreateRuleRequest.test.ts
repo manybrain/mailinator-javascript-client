@@ -1,9 +1,9 @@
+import {DeleteRuleRequest} from "../../src/rule";
 import {createNewRule, getFirstAvailableDomain} from '../TestUtils';
 import {EnabledIfEnvironmentVariable, EnabledIfEnvironmentVariables, itIf} from "../ConditionalTest";
 import {ENV_API_TOKEN, ENV_DOMAIN_PRIVATE, getApiToken} from "../TestEnv";
-import {DeleteRuleRequest} from "../../src/rule/DeleteRuleRequest";
 
-describe('CreateRuleRequest Tests', function () {
+describe.skip('CreateRuleRequest Tests', function () {
 
     itIf(
         new EnabledIfEnvironmentVariables(

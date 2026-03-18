@@ -1,19 +1,30 @@
+import {GetInboxMessageAttachmentRequest, GetInboxMessageAttachmentsRequest} from '../../src/message';
 import * as tmp from 'tmp';
-import {GetInboxMessageAttachmentRequest} from '../../src/message/GetInboxMessageAttachmentRequest';
 import * as fs from "fs";
 import {
     ENV_API_TOKEN,
-    ENV_ATTACHMENT_ID,
     ENV_DOMAIN_PRIVATE,
     ENV_INBOX_TEST,
     ENV_MESSAGE_WITH_ATTACHMENT_ID,
     getApiToken,
-    getAttachmentId,
     getInboxTest,
     getMessageWithAttachmentId,
     getPrivateDomain
 } from "../TestEnv";
 import {EnabledIfEnvironmentVariable, EnabledIfEnvironmentVariables, itIf} from "../ConditionalTest";
+
+const getAttachmentIdFromList = (attachment: Record<string, unknown>) => {
+    if (attachment['attachment-id'] !== undefined) {
+        return attachment['attachment-id'];
+    }
+    if (attachment['attachmentId'] !== undefined) {
+        return attachment['attachmentId'];
+    }
+    if (attachment['attachment_id'] !== undefined) {
+        return attachment['attachment_id'];
+    }
+    return attachment['id'];
+};
 
 describe('GetInboxMessageAttachmentRequest Tests', function () {
 
@@ -22,14 +33,33 @@ describe('GetInboxMessageAttachmentRequest Tests', function () {
             new EnabledIfEnvironmentVariable(ENV_API_TOKEN, "[^\\s]+"),
             new EnabledIfEnvironmentVariable(ENV_DOMAIN_PRIVATE, "[^\\s]+"),
             new EnabledIfEnvironmentVariable(ENV_INBOX_TEST, "[^\\s]+"),
-            new EnabledIfEnvironmentVariable(ENV_MESSAGE_WITH_ATTACHMENT_ID, "[^\\s]+"),
-            new EnabledIfEnvironmentVariable(ENV_ATTACHMENT_ID, "[^\\s]+")
+            new EnabledIfEnvironmentVariable(ENV_MESSAGE_WITH_ATTACHMENT_ID, "[^\\s]+")
         )
     )('testInboxMessageAttachmentRequest', async () => {
 
         const tmpobj = tmp.fileSync();
 
-        const request = new GetInboxMessageAttachmentRequest(getPrivateDomain(), getInboxTest(), getMessageWithAttachmentId(), getAttachmentId());
+        const attachmentsRequest = new GetInboxMessageAttachmentsRequest(
+            getPrivateDomain(),
+            getInboxTest(),
+            getMessageWithAttachmentId()
+        );
+        const attachmentsResponse = await attachmentsRequest.execute(getApiToken());
+        expect(attachmentsResponse.statusCode).toBe(200);
+        const attachments = attachmentsResponse.result?.attachments || [];
+        expect(Array.isArray(attachments)).toBe(true);
+        expect(attachments.length).toBeGreaterThanOrEqual(1);
+
+        const attachmentId = getAttachmentIdFromList(attachments[0] as unknown as Record<string, unknown>);
+        expect(attachmentId).not.toBeUndefined();
+        expect(attachmentId).not.toBeNull();
+
+        const request = new GetInboxMessageAttachmentRequest(
+            getPrivateDomain(),
+            getInboxTest(),
+            getMessageWithAttachmentId(),
+            attachmentId as number
+        );
         const response = await request.execute(getApiToken());
 
         expect(response).toBeTruthy();

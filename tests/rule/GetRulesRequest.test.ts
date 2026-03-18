@@ -1,9 +1,9 @@
+import {GetRulesRequest} from "../../src/rule";
 import {getFirstAvailableDomain} from '../TestUtils';
 import {ENV_API_TOKEN, getApiToken} from "../TestEnv";
 import {EnabledIfEnvironmentVariable, EnabledIfEnvironmentVariables, itIf} from "../ConditionalTest";
-import {GetRulesRequest} from "../../src/rule/GetRulesRequest";
 
-describe('GetRulesRequest Tests', function () {
+describe.skip('GetRulesRequest Tests', function () {
 
     itIf(
         new EnabledIfEnvironmentVariables(

@@ -1,6 +1,5 @@
-import {GetLatestMessagesRequest} from '../../src/message/GetLatestMessagesRequest';
+import {GetLatestMessagesRequest, Inbox} from '../../src/message';
 import {IRestResponse} from 'typed-rest-client/RestClient';
-import {Inbox} from '../../src/message/Inbox';
 import {
     ENV_API_TOKEN,
     ENV_DOMAIN_PRIVATE,
@@ -11,7 +10,8 @@ import {
 } from "../TestEnv";
 import {EnabledIfEnvironmentVariable, EnabledIfEnvironmentVariables, itIf} from "../ConditionalTest";
 
-describe('GetLatestMessagesRequest Tests', function () {
+// Tests are skipped. There was never a GetLatestMessages endpoint
+describe.skip('GetLatestMessagesRequest Tests', function () {
 
     itIf(
         new EnabledIfEnvironmentVariables(

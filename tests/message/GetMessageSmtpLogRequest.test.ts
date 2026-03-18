@@ -1,3 +1,4 @@
+import {GetMessageSmtpLogRequest} from "../../src/message";
 import {postMessage} from '../TestUtils';
 import {
     ENV_API_TOKEN,
@@ -7,7 +8,6 @@ import {
     getPrivateDomain
 } from "../TestEnv";
 import {EnabledIfEnvironmentVariable, EnabledIfEnvironmentVariables, itIf} from "../ConditionalTest";
-import {GetMessageSmtpLogRequest} from "../../src/message/GetMessageSmtpLogRequest";
 
 describe('GetMessageSmtpLogRequest Tests', function () {
 

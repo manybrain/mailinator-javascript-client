@@ -1,6 +1,6 @@
+import {InstantTOTP2FACodeRequest} from "../../src/authenticator";
 import {ENV_API_TOKEN, ENV_AUTH_SECRET, getApiToken, getAuthSecret} from "../TestEnv";
 import {EnabledIfEnvironmentVariable, EnabledIfEnvironmentVariables, itIf} from "../ConditionalTest";
-import {InstantTOTP2FACodeRequest} from "../../src/authenticator/InstantTOTP2FACodeRequest";
 
 describe('InstantTOTP2FACodeRequest Tests', function () {
 

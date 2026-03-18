@@ -1,6 +1,6 @@
+import {GetTeamInfoRequest} from "../../src/stats";
 import {ENV_API_TOKEN, getApiToken} from "../TestEnv";
 import {EnabledIfEnvironmentVariable, EnabledIfEnvironmentVariables, itIf} from "../ConditionalTest";
-import {GetTeamInfoRequest} from "../../src/stats/GetTeamInfoRequest";
 
 describe('GetTeamInfoRequest Tests', function () {
 

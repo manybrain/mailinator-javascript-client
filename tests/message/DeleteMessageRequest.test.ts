@@ -1,5 +1,5 @@
+import {DeleteMessageRequest} from '../../src/message';
 import {postMessage} from '../TestUtils';
-import {DeleteMessageRequest} from '../../src/message/DeleteMessageRequest';
 import {
     ENV_API_TOKEN,
     ENV_DOMAIN_PRIVATE,

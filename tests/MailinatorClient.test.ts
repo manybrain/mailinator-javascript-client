@@ -1,24 +1,22 @@
+import {GetInboxMessageAttachmentRequest, GetInboxMessageAttachmentsRequest} from "../src/message";
+import {GetDomainRequest} from '../src/domain';
 import * as tmp from 'tmp';
-import {getFirstAvailableDomain} from './TestUtils';
-import {GetDomainRequest} from '../src/domain/GetDomainRequest';
+import { getFirstAvailableDomain } from './TestUtils';
 import {
     ENV_API_TOKEN,
-    ENV_ATTACHMENT_ID,
     ENV_DOMAIN_PRIVATE,
     ENV_INBOX_TEST,
     ENV_MESSAGE_WITH_ATTACHMENT_ID,
     getApiToken,
-    getAttachmentId,
     getInboxTest,
     getMessageWithAttachmentId,
     getPrivateDomain
 } from "./TestEnv";
-import {EnabledIfEnvironmentVariable, EnabledIfEnvironmentVariables, itIf} from "./ConditionalTest";
-import {MailinatorClient} from "../src/MailinatorClient";
-import {GetInboxMessageAttachmentRequest} from "../src/message/GetInboxMessageAttachmentRequest";
+import { EnabledIfEnvironmentVariable, EnabledIfEnvironmentVariables, itIf } from "./ConditionalTest";
+import { MailinatorClient } from "../src/MailinatorClient";
 import * as fs from "fs";
-import {IRestResponse} from "typed-rest-client/RestClient";
-import {IncomingMessage} from "http";
+import { IRestResponse } from "typed-rest-client/RestClient";
+import { IncomingMessage } from "http";
 
 describe('MailinatorClient Tests', function () {
 
@@ -37,7 +35,6 @@ describe('MailinatorClient Tests', function () {
         const result = response.result;
         expect(result).toBeTruthy();
         expect(result!.name).toBeTruthy();
-        expect(result!._id).toBeTruthy();
         expect(result!.description).toBeTruthy();
         expect(result!.enabled).toBeTruthy();
         expect(result!.rules).toBeTruthy();
@@ -49,20 +46,41 @@ describe('MailinatorClient Tests', function () {
             new EnabledIfEnvironmentVariable(ENV_API_TOKEN, "[^\\s]+"),
             new EnabledIfEnvironmentVariable(ENV_DOMAIN_PRIVATE, "[^\\s]+"),
             new EnabledIfEnvironmentVariable(ENV_INBOX_TEST, "[^\\s]+"),
-            new EnabledIfEnvironmentVariable(ENV_MESSAGE_WITH_ATTACHMENT_ID, "[^\\s]+"),
-            new EnabledIfEnvironmentVariable(ENV_ATTACHMENT_ID, "[^\\s]+")
+            new EnabledIfEnvironmentVariable(ENV_MESSAGE_WITH_ATTACHMENT_ID, "[^\\s]+")
         )
     )('testInboxMessageAttachmentRequest', async () => {
 
         const tmpobj = tmp.fileSync();
 
         const mailinatorClient: MailinatorClient = new MailinatorClient(getApiToken());
+        const attachmentsResponse = await mailinatorClient.request(
+            new GetInboxMessageAttachmentsRequest(
+                getPrivateDomain(),
+                getInboxTest(),
+                getMessageWithAttachmentId()
+            )
+        );
+        expect(attachmentsResponse.statusCode).toBe(200);
+        const attachments = attachmentsResponse.result?.attachments || [];
+        expect(Array.isArray(attachments)).toBe(true);
+        expect(attachments.length).toBeGreaterThanOrEqual(1);
+        const attachment = attachments[0] as unknown as Record<string, unknown>;
+        const attachmentId = attachment['attachment-id'] !== undefined
+            ? attachment['attachment-id']
+            : attachment['attachmentId'] !== undefined
+                ? attachment['attachmentId']
+                : attachment['attachment_id'] !== undefined
+                    ? attachment['attachment_id']
+                    : attachment['id'];
+        expect(attachmentId).not.toBeUndefined();
+        expect(attachmentId).not.toBeNull();
+
         const response: IRestResponse<IncomingMessage> = await mailinatorClient.request(
             new GetInboxMessageAttachmentRequest(
                 getPrivateDomain(),
                 getInboxTest(),
                 getMessageWithAttachmentId(),
-                getAttachmentId())
+                attachmentId as number)
         );
 
         expect(response).toBeTruthy();

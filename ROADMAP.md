@@ -9,14 +9,19 @@
 
 Next Minor Release(s):
 - [x] Update `GetSmsInboxRequest` to support all inbox-list query parameters from the OpenAPI spec (`skip`, `limit`, `sort`, `decode_subject`, `cursor`, `full`, `wait`, `delete`).
-- [ ] Implement `getMessageSummary` (`GET /api/v2/domains/{domain}/messages/{messageId}/summary`).
-- [ ] Implement `getMessageText` (`GET /api/v2/domains/{domain}/messages/{messageId}/text`).
-- [ ] Implement `getMessageTextPlain` (`GET /api/v2/domains/{domain}/messages/{messageId}/textplain`).
-- [ ] Implement `getMessageTextHtml` (`GET /api/v2/domains/{domain}/messages/{messageId}/texthtml`).
-- [ ] Implement `getMessageHeaders` (`GET /api/v2/domains/{domain}/messages/{messageId}/headers`).
-- [ ] Implement `streamDomainMessages` (`GET /api/v2/domains/{domain}/stream`).
-- [ ] Implement `streamInboxMessages` (`GET /api/v2/domains/{domain}/stream/{inbox}`).
-- [ ] Implement `listDomainMessages` (`GET /api/v2/domains/{domain}/inboxes`). ** double check**
+- [x] Implement `getMessageSummary` (`GET /api/v2/domains/{domain}/messages/{messageId}/summary`).
+- [x] Stabilize attachment download tests by deriving attachment IDs from the attachment list.
+- [x] Implement `getMessageText` (`GET /api/v2/domains/{domain}/messages/{messageId}/text`).
+- [x] Implement `getMessageTextPlain` (`GET /api/v2/domains/{domain}/messages/{messageId}/textplain`).
+- [x] Implement `getMessageTextHtml` (`GET /api/v2/domains/{domain}/messages/{messageId}/texthtml`).
+- [x] Implement `getMessageHeaders` (`GET /api/v2/domains/{domain}/messages/{messageId}/headers`).
+- [x] Implement `streamDomainMessages` (`GET /api/v2/domains/{domain}/stream`).
+- [x] Implement `streamInboxMessages` (`GET /api/v2/domains/{domain}/stream/{inbox}`).
+- [x] Implement `listDomainMessages` (`GET /api/v2/domains/{domain}/inboxes`).
+  Note: `GetInboxRequest` currently targets `/api/v2/domains/{domain}/inboxes/{inbox}` and falls back to `/inboxes/` when `inbox` is omitted, which is not an exact match for the spec path `/inboxes`. 
+    - The fix for this is instead of falling back to `/inboxes/`, instead to supply a wildcard value `(*)` when `inbox` is omitted. 
+    - Implemented: `GetInboxRequest` now uses `*` when `inbox` is omitted and resolves to `/inboxes/*`.
+- [x] Refactor test files to use index exports instead of deep link imports.
 
 
 Next Major Release:

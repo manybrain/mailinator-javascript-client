@@ -1,10 +1,11 @@
+import {DeleteDomainRequest} from '../../src/domain';
 import {v4 as uuid} from 'uuid';
 import {createNewDomain} from '../TestUtils';
-import {DeleteDomainRequest} from '../../src/domain/DeleteDomainRequest';
 import {ENV_API_TOKEN, getApiToken} from "../TestEnv";
 import {EnabledIfEnvironmentVariable, EnabledIfEnvironmentVariables, itIf} from "../ConditionalTest";
 
-describe('DeleteDomainRequest Tests', function () {
+// Tests are skipped. This endpoint is deprecated
+describe.skip('DeleteDomainRequest Tests', function () {
 
     itIf(
         new EnabledIfEnvironmentVariables(
