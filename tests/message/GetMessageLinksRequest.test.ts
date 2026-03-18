@@ -1,3 +1,4 @@
+import {GetMessageLinksRequest} from "../../src/message";
 import {postMessage} from '../TestUtils';
 import {
     ENV_API_TOKEN,
@@ -7,7 +8,6 @@ import {
     getPrivateDomain
 } from "../TestEnv";
 import {EnabledIfEnvironmentVariable, EnabledIfEnvironmentVariables, itIf} from "../ConditionalTest";
-import {GetMessageLinksRequest} from "../../src/message/GetMessageLinksRequest";
 
 describe('GetMessageLinksRequest Tests', function () {
 

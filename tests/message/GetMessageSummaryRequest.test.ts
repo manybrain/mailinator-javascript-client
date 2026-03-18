@@ -1,4 +1,4 @@
-import { GetMessageSummaryRequest } from '../../src/message/GetMessageSummaryRequest';
+import {GetMessageSummaryRequest} from '../../src/message';
 import {
     ENV_API_TOKEN,
     getApiToken,

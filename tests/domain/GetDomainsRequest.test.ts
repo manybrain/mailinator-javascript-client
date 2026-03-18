@@ -1,4 +1,4 @@
-import {GetDomainsRequest} from '../../src/domain/GetDomainsRequest';
+import {GetDomainsRequest} from '../../src/domain';
 import {ENV_API_TOKEN, getApiToken} from "../TestEnv";
 import {EnabledIfEnvironmentVariable, EnabledIfEnvironmentVariables, itIf} from "../ConditionalTest";
 

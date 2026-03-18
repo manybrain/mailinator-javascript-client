@@ -1,6 +1,7 @@
+import {GetInboxMessageAttachmentRequest, GetInboxMessageAttachmentsRequest} from "../src/message";
+import {GetDomainRequest} from '../src/domain';
 import * as tmp from 'tmp';
 import { getFirstAvailableDomain } from './TestUtils';
-import { GetDomainRequest } from '../src/domain/GetDomainRequest';
 import {
     ENV_API_TOKEN,
     ENV_DOMAIN_PRIVATE,
@@ -13,8 +14,6 @@ import {
 } from "./TestEnv";
 import { EnabledIfEnvironmentVariable, EnabledIfEnvironmentVariables, itIf } from "./ConditionalTest";
 import { MailinatorClient } from "../src/MailinatorClient";
-import { GetInboxMessageAttachmentRequest } from "../src/message/GetInboxMessageAttachmentRequest";
-import { GetInboxMessageAttachmentsRequest } from "../src/message/GetInboxMessageAttachmentsRequest";
 import * as fs from "fs";
 import { IRestResponse } from "typed-rest-client/RestClient";
 import { IncomingMessage } from "http";

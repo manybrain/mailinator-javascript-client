@@ -1,4 +1,4 @@
-import { GetMessageTextRequest } from '../../src/message/GetMessageTextRequest';
+import {GetMessageTextRequest} from '../../src/message';
 import {
     ENV_API_TOKEN,
     ENV_REAL_MESSAGE_ID,

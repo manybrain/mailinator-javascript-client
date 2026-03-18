@@ -1,6 +1,6 @@
+import {DeleteInboxMessagesRequest} from '../../src/message';
 import {v4 as uuid} from 'uuid';
 import {postMessage} from '../TestUtils';
-import {DeleteInboxMessagesRequest} from '../../src/message/DeleteInboxMessagesRequest';
 import {ENV_API_TOKEN, ENV_DOMAIN_PRIVATE, getApiToken, getPrivateDomain} from "../TestEnv";
 import {EnabledIfEnvironmentVariable, EnabledIfEnvironmentVariables, itIf} from "../ConditionalTest";
 

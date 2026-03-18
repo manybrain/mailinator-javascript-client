@@ -1,6 +1,5 @@
+import {GetMessageAttachmentRequest, GetMessageAttachmentsRequest} from '../../src/message';
 import * as tmp from 'tmp';
-import {GetMessageAttachmentRequest} from '../../src/message/GetMessageAttachmentRequest';
-import {GetMessageAttachmentsRequest} from '../../src/message/GetMessageAttachmentsRequest';
 import * as fs from "fs";
 import {
     ENV_API_TOKEN,

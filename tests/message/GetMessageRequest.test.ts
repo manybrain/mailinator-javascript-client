@@ -1,6 +1,6 @@
+import {GetMessageRequest} from '../../src/message';
 import {v4 as uuid} from 'uuid';
 import {postMessage} from '../TestUtils';
-import {GetMessageRequest} from '../../src/message/GetMessageRequest';
 import {
     ENV_API_TOKEN,
     ENV_DOMAIN_PRIVATE,

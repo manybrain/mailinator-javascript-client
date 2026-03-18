@@ -1,6 +1,6 @@
+import {GetAuthenticatorRequest} from "../../src/authenticator";
 import {ENV_API_TOKEN, getApiToken} from "../TestEnv";
 import {EnabledIfEnvironmentVariable, EnabledIfEnvironmentVariables, itIf} from "../ConditionalTest";
-import {GetAuthenticatorRequest} from "../../src/authenticator/GetAuthenticatorRequest";
 
 describe('GetAuthenticatorRequest Tests', function () {
 

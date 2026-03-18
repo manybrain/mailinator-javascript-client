@@ -1,6 +1,5 @@
-import {GetStreamInboxMessagesRequest} from '../../src/message';
+import {GetStreamInboxMessagesRequest, Inbox} from '../../src/message';
 import {IRestResponse} from 'typed-rest-client/RestClient';
-import {Inbox} from '../../src/message/Inbox';
 import {
     ENV_API_TOKEN,
     ENV_DOMAIN_PRIVATE,

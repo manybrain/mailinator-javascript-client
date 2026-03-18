@@ -1,8 +1,7 @@
+import {DeleteRuleRequest, DisableRuleRequest} from "../../src/rule";
 import {createNewRule, getFirstAvailableDomain} from '../TestUtils';
 import {ENV_API_TOKEN, ENV_DOMAIN_PRIVATE, getApiToken} from "../TestEnv";
-import {DisableRuleRequest} from "../../src/rule/DisableRuleRequest";
 import {EnabledIfEnvironmentVariable, EnabledIfEnvironmentVariables, itIf} from "../ConditionalTest";
-import {DeleteRuleRequest} from "../../src/rule/DeleteRuleRequest";
 
 describe.skip('DisableRuleRequest Tests', function () {
 

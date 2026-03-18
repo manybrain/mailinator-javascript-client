@@ -1,5 +1,5 @@
+import {PrivateWebhookRequest} from "../../src/webhook";
 import {EnabledIfEnvironmentVariable, EnabledIfEnvironmentVariables, itIf} from "../ConditionalTest";
-import {PrivateWebhookRequest} from "../../src/webhook/PrivateWebhookRequest";
 import { getWehhookToAdd } from "../TestUtils";
 import { ENV_WEBHOOKTOKEN_PRIVATEDOMAIN, getWebhookTokenPrivateDomain } from "../TestEnv";
 

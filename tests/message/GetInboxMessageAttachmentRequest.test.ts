@@ -1,6 +1,5 @@
+import {GetInboxMessageAttachmentRequest, GetInboxMessageAttachmentsRequest} from '../../src/message';
 import * as tmp from 'tmp';
-import {GetInboxMessageAttachmentRequest} from '../../src/message/GetInboxMessageAttachmentRequest';
-import {GetInboxMessageAttachmentsRequest} from '../../src/message/GetInboxMessageAttachmentsRequest';
 import * as fs from "fs";
 import {
     ENV_API_TOKEN,

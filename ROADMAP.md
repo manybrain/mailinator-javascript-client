@@ -17,11 +17,11 @@ Next Minor Release(s):
 - [x] Implement `getMessageHeaders` (`GET /api/v2/domains/{domain}/messages/{messageId}/headers`).
 - [x] Implement `streamDomainMessages` (`GET /api/v2/domains/{domain}/stream`).
 - [x] Implement `streamInboxMessages` (`GET /api/v2/domains/{domain}/stream/{inbox}`).
-- [ ] Implement `listDomainMessages` (`GET /api/v2/domains/{domain}/inboxes`).
+- [x] Implement `listDomainMessages` (`GET /api/v2/domains/{domain}/inboxes`).
   Note: `GetInboxRequest` currently targets `/api/v2/domains/{domain}/inboxes/{inbox}` and falls back to `/inboxes/` when `inbox` is omitted, which is not an exact match for the spec path `/inboxes`. 
     - The fix for this is instead of falling back to `/inboxes/`, instead to supply a wildcard value `(*)` when `inbox` is omitted. 
     - Implemented: `GetInboxRequest` now uses `*` when `inbox` is omitted and resolves to `/inboxes/*`.
-- [ ] Refactor test files to use index exports instead of deep link imports.
+- [x] Refactor test files to use index exports instead of deep link imports.
 
 
 Next Major Release:

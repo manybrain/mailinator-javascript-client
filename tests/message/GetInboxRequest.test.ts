@@ -1,8 +1,6 @@
-import {GetInboxRequest} from '../../src/message/GetInboxRequest';
+import {GetInboxRequest, Inbox, Sort} from '../../src/message';
+import {DomainType} from '../../src/domain';
 import {IRestResponse} from 'typed-rest-client/RestClient';
-import {Inbox} from '../../src/message/Inbox';
-import {DomainType} from '../../src/domain/DomainType';
-import {Sort} from '../../src/message/Sort';
 import {
     ENV_API_TOKEN,
     ENV_DOMAIN_PRIVATE,

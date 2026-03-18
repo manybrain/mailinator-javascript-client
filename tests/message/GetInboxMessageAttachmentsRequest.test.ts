@@ -1,4 +1,4 @@
-import {GetInboxMessageAttachmentsRequest} from '../../src/message/GetInboxMessageAttachmentsRequest';
+import {GetInboxMessageAttachmentsRequest} from '../../src/message';
 import {postMessage} from "../TestUtils";
 import {
     ENV_API_TOKEN,

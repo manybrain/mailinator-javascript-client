@@ -1,9 +1,8 @@
+import {DeleteRuleRequest, GetRuleRequest} from "../../src/rule";
 import {v4 as uuid} from 'uuid';
 import {createNewRule, getFirstAvailableDomain} from '../TestUtils';
 import {ENV_API_TOKEN, getApiToken} from "../TestEnv";
 import {EnabledIfEnvironmentVariable, EnabledIfEnvironmentVariables, itIf} from "../ConditionalTest";
-import {GetRuleRequest} from "../../src/rule/GetRuleRequest";
-import {DeleteRuleRequest} from "../../src/rule/DeleteRuleRequest";
 
 describe.skip('GetRuleRequest Tests', function () {
 

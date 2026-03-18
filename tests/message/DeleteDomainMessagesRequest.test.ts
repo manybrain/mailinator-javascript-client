@@ -1,4 +1,4 @@
-import {DeleteDomainMessagesRequest} from '../../src/message/DeleteDomainMessagesRequest';
+import {DeleteDomainMessagesRequest} from '../../src/message';
 import {ENV_API_TOKEN, ENV_DELETE_DOMAIN, ENV_DOMAIN_PRIVATE, getApiToken, getDeleteDomain} from "../TestEnv";
 import {EnabledIfEnvironmentVariable, EnabledIfEnvironmentVariables, itIf} from "../ConditionalTest";
 
