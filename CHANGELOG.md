@@ -7,14 +7,16 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 ## [1.1.0] - 2026-03-05
 
 ### Changed
-- Added `.env` loading for Jest to simplify integration test setup.
-- Added `MAILINATOR_TEST_REAL_MESSAGE_ID` for summary endpoint integration testing.
+- Implemented `.env` loading for Jest to simplify integration test setup.
+- Implemented `MAILINATOR_TEST_REAL_MESSAGE_ID` for summary endpoint integration testing.
 - Lots of test updates.
 - Implemented `GetMessageSummaryRequest` SDK response modeling to align with the `{ summary: ... }` payload shape, adding a wrapper response type.
 - Implemented `GetMessageTextRequest` plus `MessageTextResponse` to support `GET /api/v2/domains/{domain}/messages/{messageId}/text`.
 - Implemented `GetMessageTextPlainRequest` to support `GET /api/v2/domains/{domain}/messages/{messageId}/textplain`.
 - Implemented `GetMessageTextHtmlRequest` to support `GET /api/v2/domains/{domain}/messages/{messageId}/texthtml`.
 - Implemented `GetMessageHeadersRequest` to support `GET /api/v2/domains/{domain}/messages/{messageId}/headers`.
+- Implemented `GetStreamDomainMessagesRequest` to support `GET /api/v2/domains/{domain}/stream`.
+- Implemented `GetStreamInboxMessagesRequest` to support `GET /api/v2/domains/{domain}/stream/{inbox}`.
 - Updated `GetInboxRequest` to use `*` when `inbox` is omitted, resolving to `/api/v2/domains/{domain}/inboxes/*`.
 
 
