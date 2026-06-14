@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a Changelog, and this project adheres to Semantic Versioning.
 
+## [1.1.1] - 2026-06-14
+
+- Update dev dependencies to address security vulnerabilities and removed `@types/uuid` as it is no longer needed with the latest `uuid` versions which include their own type definitions.
+
 ## [1.1.0] - 2026-03-05
 
 ### Changed
