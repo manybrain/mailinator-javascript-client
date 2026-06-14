@@ -4,6 +4,7 @@
     "target": "es6",
     "noImplicitAny": false,
     "strictNullChecks": true,
+    "strictPropertyInitialization": false,
     "sourceMap": false,
     "skipLibCheck": true,
     "resolveJsonModule": true,
