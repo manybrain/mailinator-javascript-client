@@ -11,6 +11,7 @@
     "test": "jest",
     "coverage": "jest --coverage",
     "build": "npm run generate:index && tsc && node scripts/sync-lib-layout.js",
+    "deps:update": "npx npm-check-updates -u && npm install",
     "prepare": "npm run build",
     "version": "git add -A .",
     "postversion": "git push && git push --tags"
