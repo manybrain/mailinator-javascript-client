@@ -48,6 +48,14 @@ npm run generate:index
 
 This command is also run automatically by `npm run build`.
 
+#### Update dependencies
+
+Run a manual dependency refresh:
+
+```bash
+npm run deps:update
+```
+
 ## Publishing Changes
 
 1. Merge to main
