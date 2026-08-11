@@ -1,5 +1,5 @@
 import {DeleteInboxMessagesRequest} from '../../src/message';
-import {v4 as uuid} from 'uuid';
+import {randomUUID} from 'node:crypto';
 import {postMessage} from '../TestUtils';
 import {ENV_API_TOKEN, ENV_DOMAIN_PRIVATE, getApiToken, getPrivateDomain} from "../TestEnv";
 import {EnabledIfEnvironmentVariable, EnabledIfEnvironmentVariables, itIf} from "../ConditionalTest";
@@ -14,7 +14,7 @@ describe('DeleteInboxMessagesRequest Tests', function () {
     )('testDeleteInboxMessagesRequest', async () => {
 
         const domain = getPrivateDomain();
-        const inbox = `inbox ${uuid()}`;
+        const inbox = `inbox ${randomUUID()}`;
         await postMessage(domain, inbox);
         await postMessage(domain, inbox);
         await postMessage(domain, inbox);

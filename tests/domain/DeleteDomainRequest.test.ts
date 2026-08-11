@@ -1,5 +1,5 @@
 import {DeleteDomainRequest} from '../../src/domain';
-import {v4 as uuid} from 'uuid';
+import {randomUUID} from 'node:crypto';
 import {createNewDomain} from '../TestUtils';
 import {ENV_API_TOKEN, getApiToken} from "../TestEnv";
 import {EnabledIfEnvironmentVariable, EnabledIfEnvironmentVariables, itIf} from "../ConditionalTest";
@@ -13,7 +13,7 @@ describe.skip('DeleteDomainRequest Tests', function () {
         )
     )('testDeleteDomainRequest', async () => {
 
-        const random: string = uuid();
+        const random: string = randomUUID();
         const domainNameToCreate = `jstest${random}.testinator.com`;
         const createDomainResponse = await createNewDomain(domainNameToCreate);
 
