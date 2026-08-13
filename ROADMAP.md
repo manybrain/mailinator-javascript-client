@@ -1,6 +1,6 @@
 # ROADMAP
 
-- [x] Add AI_INSTRUCTIONS.md that explain the link between this client and the OpenAPI specification. That is the source of truth for this repo.
+- [x] Document the relationship between this client and the OpenAPI specification, the source of truth for this repository.
 - [x] Pull examples out of README.md add to separate file(s). Make sure the examples are clear and accurate. 
 - [x] Add section on how to publish updates to npm to README.md
 - [x] Add depreciation warning to endpoints that exist here and not in the OpenAPI specification.
