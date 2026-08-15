@@ -1,4 +1,4 @@
-import {v4 as uuid} from 'uuid';
+import {randomUUID} from 'node:crypto';
 import {MessageToPost} from '../src/message/MessageToPost';
 import {PostMessageRequest} from '../src/message/PostMessageRequest';
 import {getApiToken} from "./TestEnv";
@@ -16,7 +16,7 @@ import { Webhook } from '../src/webhook/Webhook';
 
 export const postMessage = (domain: string, inbox: string) => {
 
-    const random: string = uuid();
+    const random: string = randomUUID();
 
     const message = new MessageToPost("raul", `testPostMessageRequest JS ${random}`, `text ${random}`);
 
@@ -48,7 +48,7 @@ export const createNewRule = async () => {
     condition.condition_data.field = "to";
     condition.condition_data.value = "raul";
 
-    const random: string = uuid();
+    const random: string = randomUUID();
 
     const ruleToCreate = new RuleToCreate();
     ruleToCreate.name = `rule name ${random}`;

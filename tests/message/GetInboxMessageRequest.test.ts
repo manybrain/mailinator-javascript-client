@@ -1,5 +1,5 @@
 import {GetInboxMessageRequest} from '../../src/message';
-import {v4 as uuid} from 'uuid';
+import {randomUUID} from 'node:crypto';
 import {postMessage} from '../TestUtils';
 import {
     ENV_API_TOKEN,
@@ -44,7 +44,7 @@ describe('GetInboxMessageRequest Tests', function () {
         )
     )('testInboxMessageRequestWhenMessageDoesNotExist', async () => {
 
-        const random: string = uuid();
+        const random: string = randomUUID();
         const request = new GetInboxMessageRequest(getPrivateDomain(), getInboxTest(), random);
         await expect(request.execute(getApiToken())).rejects.toThrow()
     });

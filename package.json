@@ -34,16 +34,20 @@
   },
   "homepage": "https://github.com/manybrain/mailinator-javascript-client",
   "dependencies": {
-    "@types/node": "^25.9.3",
+    "@types/node": "^25.9.5",
     "typed-rest-client": "^3.0.0"
+  },
+  "overrides": {
+    "typed-rest-client": {
+      "qs": "6.15.3"
+    }
   },
   "devDependencies": {
     "@types/jest": "^30.0.0",
     "dotenv": "^17.4.2",
     "jest": "^30.4.2",
     "tmp": "^0.2.7",
-    "ts-jest": "^29.4.11",
-    "typescript": "^6.0.3",
-    "uuid": "^14.0.0"
+    "ts-jest": "^29.4.12",
+    "typescript": "^6.0.3"
   }
 }

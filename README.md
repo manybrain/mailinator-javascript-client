@@ -20,6 +20,8 @@ See [EXAMPLES.md](EXAMPLES.md) for more code examples on how to use the client.
 
 ## Development
 
+See [OpenAPI alignment](docs/openapi-alignment.md) for the SDK architecture, specification gap-analysis workflow, and implementation checklist.
+
 #### Build tests
 
 * `npm test`
