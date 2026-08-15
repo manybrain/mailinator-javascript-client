@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a Changelog, and this project adheres to Semantic Versioning.
 
+## [1.1.2] - 2026-08-15
+
+### Fixed
+- Updated and pinned dependencies, including `qs` 6.15.3, to address security vulnerabilities.
+- Added a test-specific TypeScript configuration for reliable Jest and `ts-jest` compilation.
+
+### Changed
+- Replaced the test-only `uuid` dependency with Node.js `crypto.randomUUID()`.
+- Updated `@types/node` and `ts-jest` and refreshed transitive dependencies.
+- Consolidated contributor guidance and added documentation for maintaining alignment with the Mailinator OpenAPI specification.
+
 ## [1.1.1] - 2026-06-14
 
 - Update dev dependencies to address security vulnerabilities and removed `@types/uuid` as it is no longer needed with the latest `uuid` versions which include their own type definitions.
